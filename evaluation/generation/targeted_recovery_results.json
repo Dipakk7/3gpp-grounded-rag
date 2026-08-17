@@ -1,0 +1,32 @@
+[
+  {
+    "id": "G002",
+    "status": "abstain",
+    "json_valid": false,
+    "claims_present": false,
+    "claims_count": 0,
+    "evidence_ids_present": false,
+    "citation_valid": true,
+    "citations": [],
+    "claim_support": false,
+    "answer_present": false,
+    "truncated": true,
+    "latency_s": 116.92,
+    "answer_preview": null
+  },
+  {
+    "id": "G009",
+    "status": "abstain",
+    "json_valid": false,
+    "claims_present": false,
+    "claims_count": 0,
+    "evidence_ids_present": false,
+    "citation_valid": true,
+    "citations": [],
+    "claim_support": false,
+    "answer_present": false,
+    "truncated": true,
+    "latency_s": 76.54,
+    "answer_preview": null
+  }
+]

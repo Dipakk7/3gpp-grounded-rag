@@ -1,0 +1,1240 @@
+{
+  "corpus": {
+    "documents_count": 5,
+    "inspection_tool": "inspect_documents.py",
+    "environment": {
+      "python_version": "3.13.1",
+      "docx_version": "1.2.0"
+    },
+    "total_paragraphs": 48844,
+    "total_tables": 681,
+    "total_clauses": 4178,
+    "total_annexes": 44
+  },
+  "validation": {
+    "clause_detection_tested": true,
+    "validation_examples": 20,
+    "true_positives": 10,
+    "false_positives": 0,
+    "true_negatives": 10,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "detailed_results": [
+      {
+        "description": "TS 23.501 Level-3 heading",
+        "style": "Heading 3",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 23.501 Level-5 heading",
+        "style": "Heading 5",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 23.502 Level-5 heading",
+        "style": "Heading 5",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 24.501 Level-4 heading",
+        "style": "Heading 4",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 28.535 Level-4 heading",
+        "style": "Heading 4",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 38.300 Level-4 heading",
+        "style": "Heading 4",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 23.501 Top-level Annex",
+        "style": "Heading 8",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "TS 38.300 Annex subclause",
+        "style": "Heading 1",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "Standard Level-1 Scope heading",
+        "style": "Heading 1",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "Standard front-matter heading",
+        "style": "Heading 1",
+        "is_toc": false,
+        "expected": true,
+        "predicted": true,
+        "classification": "TP"
+      },
+      {
+        "description": "Inline clause reference in prose",
+        "style": "Normal",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Numbered list in bullet style",
+        "style": "B1",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Numeric parameter description",
+        "style": "Normal",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "TOC line with trailing page number",
+        "style": "toc 3",
+        "is_toc": true,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "TOC Level-1 line",
+        "style": "toc 1",
+        "is_toc": true,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Table caption",
+        "style": "TH",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Figure caption",
+        "style": "TF",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Table cell with numeric codes",
+        "style": "TA",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Running page header",
+        "style": "Header",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      },
+      {
+        "description": "Copyright footer note",
+        "style": "Normal",
+        "is_toc": false,
+        "expected": false,
+        "predicted": false,
+        "classification": "TN"
+      }
+    ],
+    "notes": "Evaluated on a manually reviewed validation fixture of 20 representative corpus examples (10 positive structural headings across all 5 specs, 10 negative non-clause samples including TOC, tables, headers, and numeric prose). On this defined fixture, the hybrid detector produced 0 false positives and 0 false negatives."
+  },
+  "documents": [
+    {
+      "filename": "23501-ic0.docx",
+      "specification": "TS 23.501",
+      "version": "V18.12.0",
+      "release": "Release 18",
+      "date": "2025-12",
+      "title": "System architecture for the 5G System (5GS); Stage 2",
+      "total_paragraphs": 11436,
+      "total_tables": 57,
+      "toc_paragraphs_count": 1060,
+      "body_paragraphs_count": 10376,
+      "clause_count": 1015,
+      "annex_count": 18,
+      "figures_count": 144,
+      "table_captions_count": 54,
+      "heading_styles_used": [
+        "H6",
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 5",
+        "Heading 8"
+      ],
+      "clause_patterns": [
+        "Annex X (type): Title",
+        "Level-1 (X)",
+        "Level-2 (X.X)",
+        "Level-3 (X.X.X)",
+        "Level-4 (X.X.X.X)",
+        "Level-5 (X.X.X.X.X)",
+        "Level-6 (X.X.X.X.X.X)",
+        "Named-Section (Foreword)"
+      ],
+      "clause_numbers_as_normal_text": true,
+      "clause_num_title_separated_by_tab": true,
+      "page_citation": {
+        "status": "requires rendering/conversion",
+        "details": "DOCX XML represents a reflowable stream. It lacks deterministic per-paragraph physical page boundaries without running a Word/PDF layout rendering engine. Found 661 lastRenderedPageBreak tags and 21 hard page breaks. Headers/footers contain dynamic PAGE/NUMPAGES fields rather than static page mappings. Recommended Strategy: Strictly use authoritative TS Clause-level citation (e.g. 'TS 23.501 Clause 4.2.3') as the primary retrieval identifier, which is exact, invariant, and fully reproducible.",
+        "last_rendered_breaks": 661,
+        "hard_page_breaks": 21
+      },
+      "headers": [
+        {
+          "section": 1,
+          "text": "3GPP TS 23.501 V18.12.0 (2025-12) | 14 | Release 18"
+        }
+      ],
+      "footers": [
+        {
+          "section": 1,
+          "text": "3GPP"
+        }
+      ],
+      "hierarchy_samples": [
+        {
+          "clause": "3.1",
+          "title": "Definitions",
+          "style": "Heading 2",
+          "paragraph_count": 165,
+          "preview": "For the purposes of the present document, the terms and definitions given in TR\u00a021.905\u00a0[1] and the following apply. A te"
+        },
+        {
+          "clause": "3.2",
+          "title": "Abbreviations",
+          "style": "Heading 2",
+          "paragraph_count": 216,
+          "preview": "For the purposes of the present document, the abbreviations given in TR\u00a021.905\u00a0[1] and the following apply. An abbreviat"
+        },
+        {
+          "clause": "4.1",
+          "title": "General concepts",
+          "style": "Heading 2",
+          "paragraph_count": 11,
+          "preview": "The 5G System architecture is defined to support data connectivity and services enabling deployments to use techniques s"
+        },
+        {
+          "clause": "4.2",
+          "title": "Architecture reference model",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.2.1",
+          "title": "General",
+          "style": "Heading 3",
+          "paragraph_count": 13,
+          "preview": "This specification describes the architecture for the 5G System. The 5G architecture is defined as service-based and the"
+        },
+        {
+          "clause": "4.2.2",
+          "title": "Network Functions and entities",
+          "style": "Heading 3",
+          "paragraph_count": 38,
+          "preview": "The 5G System architecture consists of the following network functions (NF):"
+        },
+        {
+          "clause": "4.2.3",
+          "title": "Non-roaming reference architecture",
+          "style": "Heading 3",
+          "paragraph_count": 22,
+          "preview": "Figure 4.2.3-1 depicts the non-roaming reference architecture. Service-based interfaces are used within the Control Plan"
+        },
+        {
+          "clause": "4.2.4",
+          "title": "Roaming reference architectures",
+          "style": "Heading 3",
+          "paragraph_count": 29,
+          "preview": "Figure\u00a04.2.4-1 depicts the 5G System roaming architecture with local breakout with service-based interfaces within the C"
+        }
+      ],
+      "sample_tables": [
+        {
+          "table_index": 0,
+          "rows": 7,
+          "cols": 2,
+          "sample_cell": "3GPP TS 23.501 V18.12.0 (2025-12)"
+        },
+        {
+          "table_index": 1,
+          "rows": 3,
+          "cols": 1,
+          "sample_cell": ""
+        },
+        {
+          "table_index": 2,
+          "rows": 10,
+          "cols": 3,
+          "sample_cell": "PDU Session attribute"
+        }
+      ],
+      "issues": [
+        "TOC contains 1060 artifact paragraphs that must be stripped before chunking."
+      ],
+      "annexes": [
+        {
+          "index": 10866,
+          "annex_letter": "A",
+          "type": "informative",
+          "title": "Relationship between Service-Based Interfaces and Reference Points",
+          "style": "Heading 8",
+          "raw_text": "Annex A (informative):\nRelationship between Service-Based Interfaces and Reference Points"
+        },
+        {
+          "index": 10879,
+          "annex_letter": "B",
+          "type": "normative",
+          "title": "Mapping between temporary identities",
+          "style": "Heading 8",
+          "raw_text": "Annex B (normative):\nMapping between temporary identities"
+        },
+        {
+          "index": 10888,
+          "annex_letter": "C",
+          "type": "informative",
+          "title": "Guidelines and Principles for Compute-Storage Separation",
+          "style": "Heading 8",
+          "raw_text": "Annex C (informative):\nGuidelines and Principles for Compute-Storage Separation"
+        },
+        {
+          "index": 10896,
+          "annex_letter": "D",
+          "type": "informative",
+          "title": "5GS support for Non-Public Network deployment options",
+          "style": "Heading 8",
+          "raw_text": "Annex D (informative):\n5GS support for Non-Public Network deployment options"
+        },
+        {
+          "index": 10965,
+          "annex_letter": "E",
+          "type": "informative",
+          "title": "Communication models for NF/NF services interaction",
+          "style": "Heading 8",
+          "raw_text": "Annex E (informative):\nCommunication models for NF/NF services interaction"
+        },
+        {
+          "index": 10977,
+          "annex_letter": "F",
+          "type": "informative",
+          "title": "Redundant user plane paths based on multiple UEs per device",
+          "style": "Heading 8",
+          "raw_text": "Annex F (informative):\nRedundant user plane paths based on multiple UEs per device"
+        },
+        {
+          "index": 11009,
+          "annex_letter": "G",
+          "type": "informative",
+          "title": "SCP Deployment Examples",
+          "style": "Heading 8",
+          "raw_text": "Annex G (informative):\nSCP Deployment Examples"
+        },
+        {
+          "index": 11065,
+          "annex_letter": "H",
+          "type": "normative",
+          "title": "PTP usage guidelines",
+          "style": "Heading 8",
+          "raw_text": "Annex H (normative):\nPTP usage guidelines"
+        },
+        {
+          "index": 11101,
+          "annex_letter": "I",
+          "type": "normative",
+          "title": "TSN usage guidelines",
+          "style": "Heading 8",
+          "raw_text": "Annex I (normative):\nTSN usage guidelines"
+        },
+        {
+          "index": 11117,
+          "annex_letter": "J",
+          "type": "informative",
+          "title": "Link MTU considerations",
+          "style": "Heading 8",
+          "raw_text": "Annex J (informative):\nLink MTU considerations"
+        },
+        {
+          "index": 11139,
+          "annex_letter": "K",
+          "type": "normative",
+          "title": "Port and user plane node management information exchange",
+          "style": "Heading 8",
+          "raw_text": "Annex K (normative):\nPort and user plane node management information exchange"
+        },
+        {
+          "index": 11221,
+          "annex_letter": "L",
+          "type": "normative",
+          "title": "Support of GERAN/UTRAN access",
+          "style": "Heading 8",
+          "raw_text": "Annex L (normative):\nSupport of GERAN/UTRAN access"
+        },
+        {
+          "index": 11230,
+          "annex_letter": "M",
+          "type": "normative",
+          "title": "Interworking with TSN deployed in the Transport Network",
+          "style": "Heading 8",
+          "raw_text": "Annex M (normative):\nInterworking with TSN deployed in the Transport Network"
+        },
+        {
+          "index": 11295,
+          "annex_letter": "N",
+          "type": "informative",
+          "title": "Support for access to Localized Services",
+          "style": "Heading 8",
+          "raw_text": "Annex N (informative):\nSupport for access to Localized Services"
+        },
+        {
+          "index": 11350,
+          "annex_letter": "O",
+          "type": "informative",
+          "title": "Allowing UE to simultaneously send data to different groups with different QoS policy",
+          "style": "Heading 8",
+          "raw_text": "Annex O (informative):\nAllowing UE to simultaneously send data to different groups with different QoS policy"
+        },
+        {
+          "index": 11397,
+          "annex_letter": "P",
+          "type": "informative",
+          "title": "Personal IoT Networks",
+          "style": "Heading 8",
+          "raw_text": "Annex P (informative):\nPersonal IoT Networks"
+        },
+        {
+          "index": 11416,
+          "annex_letter": "Q",
+          "type": "informative",
+          "title": "Satellite coverage availability information",
+          "style": "Heading 8",
+          "raw_text": "Annex Q (informative):\nSatellite coverage availability information"
+        },
+        {
+          "index": 11434,
+          "annex_letter": "R",
+          "type": "informative",
+          "title": "Change history",
+          "style": "Heading 8",
+          "raw_text": "Annex R (informative):\nChange history"
+        }
+      ]
+    },
+    {
+      "filename": "23502-ie0.docx",
+      "specification": "TS 23.502",
+      "version": "V18.14.0",
+      "release": "Release 18",
+      "date": "2026-06",
+      "title": "Procedures for the 5G System (5GS); Stage 2",
+      "total_paragraphs": 14179,
+      "total_tables": 62,
+      "toc_paragraphs_count": 1327,
+      "body_paragraphs_count": 12852,
+      "clause_count": 1264,
+      "annex_count": 11,
+      "figures_count": 272,
+      "table_captions_count": 58,
+      "heading_styles_used": [
+        "H6",
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 5",
+        "Heading 8"
+      ],
+      "clause_patterns": [
+        "Annex X (type): Title",
+        "Level-1 (X)",
+        "Level-2 (X.X)",
+        "Level-3 (X.X.X)",
+        "Level-4 (X.X.X.X)",
+        "Level-5 (X.X.X.X.X)",
+        "Level-6 (X.X.X.X.X.X)",
+        "Named-Section (Foreword)"
+      ],
+      "clause_numbers_as_normal_text": true,
+      "clause_num_title_separated_by_tab": true,
+      "page_citation": {
+        "status": "requires rendering/conversion",
+        "details": "DOCX XML represents a reflowable stream. It lacks deterministic per-paragraph physical page boundaries without running a Word/PDF layout rendering engine. Found 829 lastRenderedPageBreak tags and 14 hard page breaks. Headers/footers contain dynamic PAGE/NUMPAGES fields rather than static page mappings. Recommended Strategy: Strictly use authoritative TS Clause-level citation (e.g. 'TS 23.501 Clause 4.2.3') as the primary retrieval identifier, which is exact, invariant, and fully reproducible.",
+        "last_rendered_breaks": 829,
+        "hard_page_breaks": 14
+      },
+      "headers": [
+        {
+          "section": 1,
+          "text": "3GPP TS 23.502 V18.14.0 (2026-06) | 14 | Release 18"
+        }
+      ],
+      "footers": [
+        {
+          "section": 1,
+          "text": "3GPP"
+        }
+      ],
+      "hierarchy_samples": [
+        {
+          "clause": "3.1",
+          "title": "Definitions",
+          "style": "Heading 2",
+          "paragraph_count": 2,
+          "preview": "For the purposes of the present document, the terms and definitions given in TR\u00a021.905\u00a0[1], TS\u00a023.501\u00a0[2] and TS\u00a023.503\u00a0"
+        },
+        {
+          "clause": "3.2",
+          "title": "Abbreviations",
+          "style": "Heading 2",
+          "paragraph_count": 1,
+          "preview": "For the purposes of the present document, the abbreviations given in TR\u00a021.905\u00a0[1], TS\u00a023.501\u00a0[2] and TS\u00a023.503\u00a0[20] app"
+        },
+        {
+          "clause": "4.1",
+          "title": "General",
+          "style": "Heading 2",
+          "paragraph_count": 1,
+          "preview": "The clause\u00a04 describes the procedures and Network Function services for the 5GS by end-to-end information flows and thes"
+        },
+        {
+          "clause": "4.2",
+          "title": "Connection, Registration and Mobility Management procedures",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.2.1",
+          "title": "General",
+          "style": "Heading 3",
+          "paragraph_count": 1,
+          "preview": "The Connection Management is used to establish and release the Control Plane signalling connection between the UE and th"
+        },
+        {
+          "clause": "4.2.2",
+          "title": "Registration Management procedures",
+          "style": "Heading 3",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.2.2.1",
+          "title": "General",
+          "style": "Heading 4",
+          "paragraph_count": 1,
+          "preview": "The Registration and Deregistration procedures in clause\u00a04.2.2 provides the required functionality to register or deregi"
+        },
+        {
+          "clause": "4.2.2.2",
+          "title": "Registration procedures",
+          "style": "Heading 4",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        }
+      ],
+      "sample_tables": [
+        {
+          "table_index": 0,
+          "rows": 7,
+          "cols": 2,
+          "sample_cell": "3GPP TS 23.502 V18.14.0 (2026-06)"
+        },
+        {
+          "table_index": 1,
+          "rows": 3,
+          "cols": 1,
+          "sample_cell": ""
+        },
+        {
+          "table_index": 2,
+          "rows": 3,
+          "cols": 2,
+          "sample_cell": "Field"
+        }
+      ],
+      "issues": [
+        "TOC contains 1327 artifact paragraphs that must be stripped before chunking."
+      ],
+      "annexes": [
+        {
+          "index": 13797,
+          "annex_letter": "A",
+          "type": "informative",
+          "title": "Drafting rules and conventions for NF services",
+          "style": "Heading 8",
+          "raw_text": "Annex A (informative):\nDrafting rules and conventions for NF services"
+        },
+        {
+          "index": 13854,
+          "annex_letter": "B",
+          "type": "informative",
+          "title": "Drafting Rules for Information flows",
+          "style": "Heading 8",
+          "raw_text": "Annex B (informative):\nDrafting Rules for Information flows"
+        },
+        {
+          "index": 13860,
+          "annex_letter": "C",
+          "type": "informative",
+          "title": "Generating EPS PDN Connection parameters from 5G PDU Session parameters",
+          "style": "Heading 8",
+          "raw_text": "Annex C (informative):\nGenerating EPS PDN Connection parameters from 5G PDU Session parameters"
+        },
+        {
+          "index": 13872,
+          "annex_letter": "D",
+          "type": "normative",
+          "title": "UE Presence in Area of Interest",
+          "style": "Heading 8",
+          "raw_text": "Annex D (normative):\nUE Presence in Area of Interest"
+        },
+        {
+          "index": 13909,
+          "annex_letter": "E",
+          "type": "normative",
+          "title": "Delegated SMF and PCF discovery in the Home Routed and specific SMF Service Areas scenarios",
+          "style": "Heading 8",
+          "raw_text": "Annex E (normative):\nDelegated SMF and PCF discovery in the Home Routed and specific SMF Service Areas scenarios"
+        },
+        {
+          "index": 13972,
+          "annex_letter": "F",
+          "type": "informative",
+          "title": "Information flows for 5GS integration with TSN or with Deterministic Networking",
+          "style": "Heading 8",
+          "raw_text": "Annex F (informative):\nInformation flows for 5GS integration with TSN or with Deterministic Networking"
+        },
+        {
+          "index": 14078,
+          "annex_letter": "G",
+          "type": "normative",
+          "title": "Support of GERAN/UTRAN access by SMF+PGW-C",
+          "style": "Heading 8",
+          "raw_text": "Annex G (normative):\nSupport of GERAN/UTRAN access by SMF+PGW-C"
+        },
+        {
+          "index": 14103,
+          "annex_letter": "H",
+          "type": "normative",
+          "title": "Support of EAP-based secondary authentication and authorization by DN-AAA over EPC",
+          "style": "Heading 8",
+          "raw_text": "Annex H (normative):\nSupport of EAP-based secondary authentication and authorization by DN-AAA over EPC"
+        },
+        {
+          "index": 14141,
+          "annex_letter": "I",
+          "type": "informative",
+          "title": "Member UE selection without the NEF assistance at the AF",
+          "style": "Heading 8",
+          "raw_text": "Annex I (informative):\nMember UE selection without the NEF assistance at the AF"
+        },
+        {
+          "index": 14155,
+          "annex_letter": "J",
+          "type": "informative",
+          "title": "Support for Personal IoT Networks",
+          "style": "Heading 8",
+          "raw_text": "Annex J (informative):\nSupport for Personal IoT Networks"
+        },
+        {
+          "index": 14177,
+          "annex_letter": "K",
+          "type": "informative",
+          "title": "Change history",
+          "style": "Heading 8",
+          "raw_text": "Annex K (informative):\nChange history"
+        }
+      ]
+    },
+    {
+      "filename": "24501-id0.docx",
+      "specification": "TS 24.501",
+      "version": "V18.13.0",
+      "release": "Release 18",
+      "date": "2025-12",
+      "title": "Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3",
+      "total_paragraphs": 17991,
+      "total_tables": 544,
+      "toc_paragraphs_count": 1349,
+      "body_paragraphs_count": 16642,
+      "clause_count": 1312,
+      "annex_count": 6,
+      "figures_count": 8,
+      "table_captions_count": 9,
+      "heading_styles_used": [
+        "H2",
+        "H6",
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 5",
+        "Heading 6",
+        "Heading 7",
+        "Heading 8"
+      ],
+      "clause_patterns": [
+        "Annex X (type): Title",
+        "Level-1 (X)",
+        "Level-2 (X.X)",
+        "Level-3 (X.X.X)",
+        "Level-4 (X.X.X.X)",
+        "Level-5 (X.X.X.X.X)",
+        "Level-6 (X.X.X.X.X.X)",
+        "Level-7 (X.X.X.X.X.X.X)",
+        "Named-Section (Foreword)"
+      ],
+      "clause_numbers_as_normal_text": true,
+      "clause_num_title_separated_by_tab": true,
+      "page_citation": {
+        "status": "requires rendering/conversion",
+        "details": "DOCX XML represents a reflowable stream. It lacks deterministic per-paragraph physical page boundaries without running a Word/PDF layout rendering engine. Found 1178 lastRenderedPageBreak tags and 9 hard page breaks. Headers/footers contain dynamic PAGE/NUMPAGES fields rather than static page mappings. Recommended Strategy: Strictly use authoritative TS Clause-level citation (e.g. 'TS 23.501 Clause 4.2.3') as the primary retrieval identifier, which is exact, invariant, and fully reproducible.",
+        "last_rendered_breaks": 1178,
+        "hard_page_breaks": 9
+      },
+      "headers": [
+        {
+          "section": 1,
+          "text": "3GPP TS 24.501 V18.13.0 (2025-12) | 880 | Release 18"
+        }
+      ],
+      "footers": [
+        {
+          "section": 1,
+          "text": "3GPP"
+        }
+      ],
+      "hierarchy_samples": [
+        {
+          "clause": "3.1",
+          "title": "Definitions",
+          "style": "Heading 2",
+          "paragraph_count": 372,
+          "preview": "For the purposes of the present document, the terms and definitions given in 3GPP\u00a0TR\u00a021.905\u00a0[1] and the following apply."
+        },
+        {
+          "clause": "3.2",
+          "title": "Abbreviations",
+          "style": "Heading 2",
+          "paragraph_count": 192,
+          "preview": "For the purposes of the present document, the abbreviations given in 3GPP\u00a0TR\u00a021.905\u00a0[1] and the following apply. An abbr"
+        },
+        {
+          "clause": "4.1",
+          "title": "Overview",
+          "style": "Heading 2",
+          "paragraph_count": 12,
+          "preview": "The non-access stratum (NAS) described in the present document forms the highest stratum of the control plane between th"
+        },
+        {
+          "clause": "4.2",
+          "title": "Coordination between the protocols for 5GS mobility management and 5GS session management",
+          "style": "Heading 2",
+          "paragraph_count": 14,
+          "preview": "A 5GS session management (5GSM) message is piggybacked in specific 5GS mobility management (5GMM) transport messages. To"
+        },
+        {
+          "clause": "4.3",
+          "title": "UE domain selection",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.3.1",
+          "title": "UE's usage setting",
+          "style": "Heading 3",
+          "paragraph_count": 7,
+          "preview": "The UE's usage setting defined in 3GPP\u00a0TS\u00a024.301\u00a0[15] applies to voice capable UEs in 5GS and indicates whether the UE h"
+        },
+        {
+          "clause": "4.3.2",
+          "title": "Domain selection for UE originating sessions / calls",
+          "style": "Heading 3",
+          "paragraph_count": 35,
+          "preview": "The behaviour of the UE for domain selection is determined by:"
+        },
+        {
+          "clause": "4.3.3",
+          "title": "Change of UE's usage setting",
+          "style": "Heading 3",
+          "paragraph_count": 2,
+          "preview": "If the UE operates in single-registration mode, whenever the UE's usage setting changes, the UE shall execute procedures"
+        }
+      ],
+      "sample_tables": [
+        {
+          "table_index": 0,
+          "rows": 7,
+          "cols": 2,
+          "sample_cell": "3GPP TS 24.501 V18.13.0 (2025-12)"
+        },
+        {
+          "table_index": 1,
+          "rows": 3,
+          "cols": 1,
+          "sample_cell": ""
+        },
+        {
+          "table_index": 2,
+          "rows": 7,
+          "cols": 2,
+          "sample_cell": "UE's usage setting change"
+        }
+      ],
+      "issues": [
+        "TOC contains 1349 artifact paragraphs that must be stripped before chunking.",
+        "High table density (544 tables); structured table-to-text chunking required."
+      ],
+      "annexes": [
+        {
+          "index": 17295,
+          "annex_letter": "A",
+          "type": "informative",
+          "title": "Cause values for 5GS mobility management",
+          "style": "Heading 8",
+          "raw_text": "Annex A (informative):\nCause values for 5GS mobility management"
+        },
+        {
+          "index": 17408,
+          "annex_letter": "B",
+          "type": "informative",
+          "title": "Cause values for 5GS session management",
+          "style": "Heading 8",
+          "raw_text": "Annex B (informative):\nCause values for 5GS session management"
+        },
+        {
+          "index": 17501,
+          "annex_letter": "C",
+          "type": "normative",
+          "title": "Storage of 5GMM information",
+          "style": "Heading 8",
+          "raw_text": "Annex C (normative):\nStorage of 5GMM information"
+        },
+        {
+          "index": 17615,
+          "annex_letter": "D",
+          "type": "normative",
+          "title": "UE policy delivery service",
+          "style": "Heading 8",
+          "raw_text": "Annex D (normative):\nUE policy delivery service"
+        },
+        {
+          "index": 17988,
+          "annex_letter": "E",
+          "type": "informative",
+          "title": "Void",
+          "style": "Heading 8",
+          "raw_text": "Annex E (informative):\nVoid"
+        },
+        {
+          "index": 17989,
+          "annex_letter": "F",
+          "type": "informative",
+          "title": "Change history",
+          "style": "Heading 8",
+          "raw_text": "Annex F (informative):\nChange history"
+        }
+      ]
+    },
+    {
+      "filename": "28535-i20.docx",
+      "specification": "TS 28.535",
+      "version": "V18.2.0",
+      "release": "Release 14",
+      "date": "2024-09",
+      "title": "Management and orchestration; Management services for Communication Service Assurance; Requirements",
+      "total_paragraphs": 349,
+      "total_tables": 3,
+      "toc_paragraphs_count": 43,
+      "body_paragraphs_count": 306,
+      "clause_count": 44,
+      "annex_count": 1,
+      "figures_count": 7,
+      "table_captions_count": 0,
+      "heading_styles_used": [
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 8"
+      ],
+      "clause_patterns": [
+        "Annex X (type): Title",
+        "Level-1 (X)",
+        "Level-2 (X.X)",
+        "Level-3 (X.X.X)",
+        "Level-4 (X.X.X.X)",
+        "Named-Section (Foreword)",
+        "Named-Section (Introduction)"
+      ],
+      "clause_numbers_as_normal_text": true,
+      "clause_num_title_separated_by_tab": true,
+      "page_citation": {
+        "status": "requires rendering/conversion",
+        "details": "DOCX XML represents a reflowable stream. It lacks deterministic per-paragraph physical page boundaries without running a Word/PDF layout rendering engine. Found 18 lastRenderedPageBreak tags and 4 hard page breaks. Headers/footers contain dynamic PAGE/NUMPAGES fields rather than static page mappings. Recommended Strategy: Strictly use authoritative TS Clause-level citation (e.g. 'TS 23.501 Clause 4.2.3') as the primary retrieval identifier, which is exact, invariant, and fully reproducible.",
+        "last_rendered_breaks": 18,
+        "hard_page_breaks": 4
+      },
+      "headers": [
+        {
+          "section": 1,
+          "text": "3GPP TS 28.535 V18.2.0 (2024-09) | 14 | Release 18"
+        }
+      ],
+      "footers": [
+        {
+          "section": 1,
+          "text": "3GPP"
+        }
+      ],
+      "hierarchy_samples": [
+        {
+          "clause": "3.1",
+          "title": "Terms",
+          "style": "Heading 2",
+          "paragraph_count": 5,
+          "preview": "For the purposes of the present document, the terms given in TR\u00a021.905\u00a0[1] and the following apply. A term defined in th"
+        },
+        {
+          "clause": "3.2",
+          "title": "Symbols",
+          "style": "Heading 2",
+          "paragraph_count": 1,
+          "preview": "Void."
+        },
+        {
+          "clause": "3.3",
+          "title": "Abbreviations",
+          "style": "Heading 2",
+          "paragraph_count": 21,
+          "preview": "For the purposes of the present document, the abbreviations given in 3GPP TR\u00a021.905 [1] and the following apply. An abbr"
+        },
+        {
+          "clause": "4.1",
+          "title": "Void",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.2",
+          "title": "Management control loops",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.2.1",
+          "title": "Overview",
+          "style": "Heading 3",
+          "paragraph_count": 8,
+          "preview": "For communication service assurance one can identify two interactions of management control loops:"
+        },
+        {
+          "clause": "4.2.2",
+          "title": "Control loops",
+          "style": "Heading 3",
+          "paragraph_count": 3,
+          "preview": "A control loop is a building block for management of networks and services. The basic principle of any control loop is t"
+        },
+        {
+          "clause": "4.2.3",
+          "title": "Open control loops",
+          "style": "Heading 3",
+          "paragraph_count": 2,
+          "preview": "In an open control loop, the human operator or other management entity intervenes in one or more of the process steps in"
+        }
+      ],
+      "sample_tables": [
+        {
+          "table_index": 0,
+          "rows": 7,
+          "cols": 2,
+          "sample_cell": "3GPP TS 28.535 V18.2.0 (2024-09)"
+        },
+        {
+          "table_index": 1,
+          "rows": 3,
+          "cols": 1,
+          "sample_cell": ""
+        },
+        {
+          "table_index": 2,
+          "rows": 34,
+          "cols": 8,
+          "sample_cell": "Change history"
+        }
+      ],
+      "issues": [
+        "TOC contains 43 artifact paragraphs that must be stripped before chunking."
+      ],
+      "annexes": [
+        {
+          "index": 346,
+          "annex_letter": "A",
+          "type": "informative",
+          "title": "Change history",
+          "style": "Heading 8",
+          "raw_text": "Annex A (informative):\nChange history"
+        }
+      ]
+    },
+    {
+      "filename": "38300-ia0.docx",
+      "specification": "TS 38.300",
+      "version": "V18.10.0",
+      "release": "Release 18",
+      "date": "2026-06",
+      "title": "NR; NR and NG-RAN Overall Description; Stage 2",
+      "total_paragraphs": 4889,
+      "total_tables": 15,
+      "toc_paragraphs_count": 546,
+      "body_paragraphs_count": 4343,
+      "clause_count": 543,
+      "annex_count": 8,
+      "figures_count": 112,
+      "table_captions_count": 14,
+      "heading_styles_used": [
+        "Heading 1",
+        "Heading 2",
+        "Heading 3",
+        "Heading 4",
+        "Heading 5",
+        "Heading 8"
+      ],
+      "clause_patterns": [
+        "Annex X (type): Title",
+        "Level-1 (X)",
+        "Level-2 (X.X)",
+        "Level-3 (X.X.X)",
+        "Level-4 (X.X.X.X)",
+        "Level-5 (X.X.X.X.X)",
+        "Named-Section (Foreword)"
+      ],
+      "clause_numbers_as_normal_text": true,
+      "clause_num_title_separated_by_tab": true,
+      "page_citation": {
+        "status": "requires rendering/conversion",
+        "details": "DOCX XML represents a reflowable stream. It lacks deterministic per-paragraph physical page boundaries without running a Word/PDF layout rendering engine. Found 0 lastRenderedPageBreak tags and 10 hard page breaks. Headers/footers contain dynamic PAGE/NUMPAGES fields rather than static page mappings. Recommended Strategy: Strictly use authoritative TS Clause-level citation (e.g. 'TS 23.501 Clause 4.2.3') as the primary retrieval identifier, which is exact, invariant, and fully reproducible.",
+        "last_rendered_breaks": 0,
+        "hard_page_breaks": 10
+      },
+      "headers": [
+        {
+          "section": 1,
+          "text": "3GPP TS 38.300 V18.10.0 (2026-06) | 29 | Release 18"
+        },
+        {
+          "section": 2,
+          "text": "3GPP TS 38.300 V18.10.0 (2026-06) | 29 | Release 18"
+        }
+      ],
+      "footers": [
+        {
+          "section": 1,
+          "text": "3GPP"
+        },
+        {
+          "section": 2,
+          "text": "3GPP"
+        }
+      ],
+      "hierarchy_samples": [
+        {
+          "clause": "3.1",
+          "title": "Abbreviations",
+          "style": "Heading 2",
+          "paragraph_count": 235,
+          "preview": "For the purposes of the present document, the abbreviations given in TR\u00a021.905 [1], in TS 36.300 [2] and the following a"
+        },
+        {
+          "clause": "3.2",
+          "title": "Definitions",
+          "style": "Heading 2",
+          "paragraph_count": 100,
+          "preview": "For the purposes of the present document, the terms and definitions given in TR\u00a021.905\u00a0[1], in TS 36.300 [2] and the fol"
+        },
+        {
+          "clause": "4.1",
+          "title": "Overall Architecture",
+          "style": "Heading 2",
+          "paragraph_count": 7,
+          "preview": "An NG-RAN node is either:"
+        },
+        {
+          "clause": "4.2",
+          "title": "Functional Split",
+          "style": "Heading 2",
+          "paragraph_count": 56,
+          "preview": "The gNB and ng-eNB host the following functions:"
+        },
+        {
+          "clause": "4.3",
+          "title": "Network Interfaces",
+          "style": "Heading 2",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.3.1",
+          "title": "NG Interface",
+          "style": "Heading 3",
+          "paragraph_count": 0,
+          "preview": "[Table / Figure / Child Clause directly follows]"
+        },
+        {
+          "clause": "4.3.1.1",
+          "title": "NG User Plane",
+          "style": "Heading 4",
+          "paragraph_count": 4,
+          "preview": "The NG user plane interface (NG-U) is defined between the NG-RAN node and the UPF. The user plane protocol stack of the "
+        },
+        {
+          "clause": "4.3.1.2",
+          "title": "NG Control Plane",
+          "style": "Heading 4",
+          "paragraph_count": 12,
+          "preview": "The NG control plane interface (NG-C) is defined between the NG-RAN node and the AMF. The control plane protocol stack o"
+        }
+      ],
+      "sample_tables": [
+        {
+          "table_index": 0,
+          "rows": 8,
+          "cols": 5,
+          "sample_cell": ""
+        },
+        {
+          "table_index": 1,
+          "rows": 5,
+          "cols": 2,
+          "sample_cell": "Uplink Control Information size including CRC, if present"
+        },
+        {
+          "table_index": 2,
+          "rows": 6,
+          "cols": 2,
+          "sample_cell": "CAPC"
+        }
+      ],
+      "issues": [
+        "TOC contains 546 artifact paragraphs that must be stripped before chunking.",
+        "Zero lastRenderedPageBreak tags present; page numbers cannot be read natively from DOCX."
+      ],
+      "annexes": [
+        {
+          "index": 4720,
+          "annex_letter": "A",
+          "type": "informative",
+          "title": "QoS Handling in RAN",
+          "style": "Heading 8",
+          "raw_text": "Annex A (informative):\nQoS Handling in RAN"
+        },
+        {
+          "index": 4788,
+          "annex_letter": "B",
+          "type": "informative",
+          "title": "Deployment Scenarios",
+          "style": "Heading 8",
+          "raw_text": "Annex B (informative):\nDeployment Scenarios"
+        },
+        {
+          "index": 4832,
+          "annex_letter": "C",
+          "type": "informative",
+          "title": "I-RNTI Reference Profiles",
+          "style": "Heading 8",
+          "raw_text": "Annex C (informative):\nI-RNTI Reference Profiles"
+        },
+        {
+          "index": 4841,
+          "annex_letter": "D",
+          "type": "informative",
+          "title": "SPID ranges and mapping of SPID values to cell reselection and inter-RAT/inter frequency handover priorities",
+          "style": "Heading 8",
+          "raw_text": "Annex D (informative):\nSPID ranges and mapping of SPID values to cell reselection and inter-RAT/inter frequency handover priorities"
+        },
+        {
+          "index": 4848,
+          "annex_letter": "E",
+          "type": "informative",
+          "title": "NG-RAN Architecture for Radio Access Network Sharing with multiple cell ID broadcast",
+          "style": "Heading 8",
+          "raw_text": "Annex E (informative):\nNG-RAN Architecture for Radio Access Network Sharing with multiple cell ID broadcast"
+        },
+        {
+          "index": 4858,
+          "annex_letter": "F",
+          "type": "normative",
+          "title": "Use and structure of the I-RNTI",
+          "style": "Heading 8",
+          "raw_text": "Annex F (normative):\nUse and structure of the I-RNTI"
+        },
+        {
+          "index": 4872,
+          "annex_letter": "G",
+          "type": "informative",
+          "title": "Components of Mobility Latency",
+          "style": "Heading 8",
+          "raw_text": "Annex G (informative):\nComponents of Mobility Latency"
+        },
+        {
+          "index": 4886,
+          "annex_letter": "H",
+          "type": "informative",
+          "title": "Change history",
+          "style": "Heading 8",
+          "raw_text": "Annex H (informative):\nChange history"
+        }
+      ]
+    }
+  ]
+}

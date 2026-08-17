@@ -1,0 +1,282 @@
+{
+  "qwen2.5:1.5b": [
+    {
+      "case_id": "T1_Factual",
+      "type": "factual",
+      "latency_ms": 22502.764463424683,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 1,
+      "parsed": {
+        "status": "answered",
+        "answer": null,
+        "claims": [
+          {
+            "text": "The AMF includes Termination of RAN CP interface (N2), Termination of NAS (N1), NAS ciphering and integrity protection, Registration management, Connection management, Reachability management, Mobility Management, Transport for SM messages between UE and SMF.",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS XX.XXX",
+            "clause_number": "X.X.X",
+            "clause_title": "AMF"
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T2_Procedural",
+      "type": "procedural",
+      "latency_ms": 12737.03408241272,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 1,
+      "parsed": {
+        "status": "answered",
+        "answer": null,
+        "claims": [
+          {
+            "text": "The first three steps in the 5GS General Registration procedure are as follows:",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS XX.XXX",
+            "clause_number": "X.X.X",
+            "clause_title": "General Registration"
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T3_Table",
+      "type": "table",
+      "latency_ms": 14179.16750907898,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 1,
+      "parsed": {
+        "status": "answered",
+        "answer": null,
+        "claims": [
+          {
+            "text": "The S-NSSAI of the Serving PLMN can be modified later during the lifetime of a PDU Session according to Table 5.6.1-1.",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS 23.501",
+            "clause_number": "X.X.X",
+            "clause_title": "Overview"
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T4_MultiClause",
+      "type": "multi_clause",
+      "latency_ms": 14341.726541519165,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 2,
+      "num_citations": 0,
+      "parsed": {
+        "status": "answered",
+        "answer": null,
+        "claims": [
+          {
+            "text": "TS 28.535 specifies the lifecycle phases for closed control loops as preparation, commissioning, operation, and decommissioning.",
+            "citations": [
+              "E1"
+            ]
+          },
+          {
+            "text": "TS 28.535 also describes governance capabilities for closed control loop lifecycle management including create, modify, activate/deactivate, delete, and configure goals.",
+            "citations": [
+              "E2"
+            ]
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T5_Unanswerable",
+      "type": "unanswerable",
+      "latency_ms": 12534.019708633423,
+      "valid_json": true,
+      "status": "abstain",
+      "abstain_correct": true,
+      "num_claims": 0,
+      "num_citations": 1,
+      "parsed": {
+        "status": "abstain",
+        "answer": null,
+        "claims": [],
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1",
+            "clause_title": "AMF"
+          }
+        ],
+        "abstention_reason": "The provided evidence does not contain any information about the maximum throughput of 6G Sub-THz links defined in TS 23.501."
+      }
+    }
+  ],
+  "qwen2.5:3b": [
+    {
+      "case_id": "T1_Factual",
+      "type": "factual",
+      "latency_ms": 58871.65451049805,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 0,
+      "parsed": {
+        "status": "answered",
+        "answer": "The primary functional responsibilities of the Access and Mobility Management Function (AMF) include Termination of RAN CP interface (N2), Termination of NAS (N1), NAS ciphering and integrity protection, Registration management, Connection management, Reachability management, Mobility Management, and Transport for SM messages between UE and SMF.",
+        "claims": [
+          {
+            "text": "The Access and Mobility Management Function (AMF) includes: Termination of RAN CP interface (N2), Termination of NAS (N1), NAS ciphering and integrity protection, Registration management, Connection management, Reachability management, Mobility Management, and Transport for SM messages between UE and SMF.",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T2_Procedural",
+      "type": "procedural",
+      "latency_ms": 27088.22274208069,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 0,
+      "parsed": {
+        "status": "answered",
+        "answer": "The first three steps in the 5GS General Registration procedure are as follows:\nStep 1: UE to (R)AN: Registration Request.\nStep 2: (R)AN to new AMF: N2 message containing Registration Request.\nStep 3: Conditional: New AMF to old AMF: Namf_Communication_UEContextTransfer.",
+        "claims": [
+          {
+            "text": "The first three steps in the 5GS General Registration procedure are as follows:",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T3_Table",
+      "type": "table",
+      "latency_ms": 29604.11834716797,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 1,
+      "num_citations": 1,
+      "parsed": {
+        "status": "answered",
+        "answer": "Yes, the S-NSSAI of the Serving PLMN can be modified later during the lifetime of the PDU Session.",
+        "claims": [
+          {
+            "text": "The S-NSSAI of the Serving PLMN may be modified later during the lifetime of the PDU Session",
+            "citations": [
+              "E1"
+            ]
+          }
+        ],
+        "abstention_reason": null,
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1",
+            "clause_title": "Overview"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "T4_MultiClause",
+      "type": "multi_clause",
+      "latency_ms": 34907.073736190796,
+      "valid_json": true,
+      "status": "answered",
+      "abstain_correct": true,
+      "num_claims": 2,
+      "num_citations": 0,
+      "parsed": {
+        "status": "answered",
+        "answer": "TS 28.535 specifies that the lifecycle phases for closed control loops are preparation, commissioning, operation, and decommissioning in clause 4.2.4.2 titled 'Lifecycle phases'. It also describes a set of capabilities including lifecycle management (create, modify, activate/deactivate, delete) and configure goals for closed control loop governance in clause 4.2.5.2 titled 'Closed control loop governance'.",
+        "claims": [
+          {
+            "text": "TS 28.535 specifies the lifecycle phases for closed control loops.",
+            "citations": [
+              "E1"
+            ]
+          },
+          {
+            "text": "TS 28.535 describes a set of capabilities including lifecycle management and configure goals for closed control loop governance.",
+            "citations": [
+              "E2"
+            ]
+          }
+        ],
+        "abstention_reason": null
+      }
+    },
+    {
+      "case_id": "T5_Unanswerable",
+      "type": "unanswerable",
+      "latency_ms": 16935.13059616089,
+      "valid_json": true,
+      "status": "abstain",
+      "abstain_correct": true,
+      "num_claims": 0,
+      "num_citations": 1,
+      "parsed": {
+        "status": "abstain",
+        "answer": null,
+        "claims": [],
+        "citations": [
+          {
+            "evidence_id": "E1",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1",
+            "clause_title": "AMF"
+          }
+        ],
+        "abstention_reason": "The provided evidence does not contain information about the maximum throughput of 6G Sub-THz links."
+      }
+    }
+  ]
+}

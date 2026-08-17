@@ -1,0 +1,271 @@
+[
+  {
+    "id": "R001",
+    "category": "Category A - Direct Factual",
+    "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.1"
+      }
+    ],
+    "notes": "AMF functional description in 5G System Architecture."
+  },
+  {
+    "id": "R002",
+    "category": "Category A - Direct Factual",
+    "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.3"
+      }
+    ],
+    "notes": "UPF functional description and packet processing roles."
+  },
+  {
+    "id": "R003",
+    "category": "Category A - Direct Factual",
+    "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+    "expected": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "4.3.1.1"
+      }
+    ],
+    "notes": "NG-U interface specification between NG-RAN node and UPF."
+  },
+  {
+    "id": "R004",
+    "category": "Category A - Direct Factual",
+    "question": "What factors and criteria are used for UPF selection during PDU session management?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.3.3.3"
+      }
+    ],
+    "notes": "UPF selection criteria in 5GS architecture (§6.3.3.3)."
+  },
+  {
+    "id": "R005",
+    "category": "Category B - Procedural",
+    "question": "What are the procedural steps for General Registration in the 5G System?",
+    "expected": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.2.2.2.2"
+      }
+    ],
+    "notes": "General Registration call flow and sequence."
+  },
+  {
+    "id": "R006",
+    "category": "Category B - Procedural",
+    "question": "How is the UE requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+    "expected": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.3.2.2.1"
+      }
+    ],
+    "notes": "PDU Session Establishment procedural steps."
+  },
+  {
+    "id": "R007",
+    "category": "Category B - Procedural",
+    "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+    "expected": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "9.2.3.2.1"
+      },
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.9.1.3.2"
+      },
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.9.1.3.3"
+      }
+    ],
+    "notes": "Intra-NR handover preparation and execution (TS 38.300 §9.2.3.2.1, TS 23.502 §§4.9.1.3.2/4.9.1.3.3)."
+  },
+  {
+    "id": "R008",
+    "category": "Category B - Procedural",
+    "question": "What actions does the UE take when an initial registration is accepted by the network?",
+    "expected": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "5.5.1.2.4"
+      }
+    ],
+    "notes": "NAS registration accepted handling and 5GS registration result."
+  },
+  {
+    "id": "R009",
+    "category": "Category C - Terminology/Concept",
+    "question": "What are the standardized 5QI characteristics and QoS packet delay budgets defined in 5GS?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.7.3.4"
+      },
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.7.4"
+      }
+    ],
+    "notes": "Packet Delay Budget (§5.7.3.4) and Standardized 5QI to QoS characteristics mapping Table 5.7.4-1 (§5.7.4)."
+  },
+  {
+    "id": "R010",
+    "category": "Category C - Terminology/Concept",
+    "question": "How is a closed control loop defined and described in communication service assurance?",
+    "expected": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "4.2.4.1"
+      }
+    ],
+    "notes": "Closed control loop concept without human operator direct involvement."
+  },
+  {
+    "id": "R011",
+    "category": "Category C - Terminology/Concept",
+    "question": "What reference points and service-based representations are defined in the non-roaming 5G reference architecture?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "4.2.3"
+      }
+    ],
+    "notes": "5G System non-roaming reference architecture."
+  },
+  {
+    "id": "R012",
+    "category": "Category C - Terminology/Concept",
+    "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+    "expected": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "3.1"
+      }
+    ],
+    "notes": "Definitions of terms in TS 28.535."
+  },
+  {
+    "id": "R013",
+    "category": "Category D - Clause-Specific",
+    "question": "What requirements govern the handling and establishment of 5G NAS security contexts?",
+    "expected": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.4.2"
+      }
+    ],
+    "notes": "Handling of 5G NAS security contexts in TS 24.501."
+  },
+  {
+    "id": "R014",
+    "category": "Category D - Clause-Specific",
+    "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+    "expected": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "5.1.1"
+      }
+    ],
+    "notes": "Functional business requirements for communication service assurance in TS 28.535."
+  },
+  {
+    "id": "R015",
+    "category": "Category D - Clause-Specific",
+    "question": "What general requirements apply to registration management procedures in 5GS?",
+    "expected": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.2.2.1"
+      }
+    ],
+    "notes": "Registration management general clause in TS 23.502."
+  },
+  {
+    "id": "R016",
+    "category": "Category D - Clause-Specific",
+    "question": "What transmission numerologies and subcarrier spacings are supported in NR physical layer?",
+    "expected": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "5.1"
+      }
+    ],
+    "notes": "NR transmission numerologies in TS 38.300 Clause 5.1."
+  },
+  {
+    "id": "R017",
+    "category": "Category E - Table-Related",
+    "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+    "expected": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.6.1"
+      }
+    ],
+    "notes": "Table 5.6.1-1: Attributes of a PDU Session."
+  },
+  {
+    "id": "R018",
+    "category": "Category E - Table-Related",
+    "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+    "expected": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.3.3"
+      }
+    ],
+    "notes": "Table 4.3.3.1: Change of UE usage setting for a UE in single-registration mode."
+  },
+  {
+    "id": "R019",
+    "category": "Category E - Table-Related",
+    "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+    "expected": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "8.2.1"
+      }
+    ],
+    "notes": "Table 8.2.1.1.1: AUTHENTICATION REQUEST message content."
+  },
+  {
+    "id": "R020",
+    "category": "Category E - Table-Related",
+    "question": "What 5GSM sublayer states in the UE are defined in the state description table?",
+    "expected": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "6.1.3.2"
+      }
+    ],
+    "notes": "5GSM sublayer states in the UE overview and state description in TS 24.501 §6.1.3.2."
+  },
+  {
+    "id": "R021",
+    "category": "Category D - Clause-Specific",
+    "question": "What does TS 28.535 specify about closed control loops and their governance?",
+    "expected": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "4.2.4"
+      },
+      {
+        "specification": "TS 28.535",
+        "clause_number": "4.2.5.2"
+      }
+    ],
+    "notes": "Closed control loops concepts (4.2.4) and governance (4.2.5.2) in TS 28.535."
+  }
+]
+

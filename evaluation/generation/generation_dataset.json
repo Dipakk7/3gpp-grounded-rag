@@ -1,0 +1,368 @@
+[
+  {
+    "id": "G001",
+    "category": "Category A - Factual",
+    "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.1"
+      }
+    ],
+    "notes": "AMF functions in TS 23.501 §6.2.1."
+  },
+  {
+    "id": "G002",
+    "category": "Category A - Factual",
+    "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.3"
+      }
+    ],
+    "notes": "UPF functionalities in TS 23.501 §6.2.3."
+  },
+  {
+    "id": "G003",
+    "category": "Category A - Factual",
+    "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "4.3.1.1"
+      }
+    ],
+    "notes": "NG-U interface in TS 38.300 §4.3.1.1."
+  },
+  {
+    "id": "G004",
+    "category": "Category A - Factual",
+    "question": "What factors and criteria are considered during UPF selection?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.8.2.1"
+      }
+    ],
+    "notes": "UPF selection factors in TS 23.501 §5.8.2.1."
+  },
+  {
+    "id": "G005",
+    "category": "Category A - Factual",
+    "question": "What reference points are defined in the 5G non-roaming reference architecture?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "4.2.3"
+      }
+    ],
+    "notes": "Non-roaming architecture reference points in TS 23.501 §4.2.3."
+  },
+  {
+    "id": "G006",
+    "category": "Category A - Factual",
+    "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "3.1"
+      }
+    ],
+    "notes": "Definitions in TS 28.535 §3.1."
+  },
+  {
+    "id": "G007",
+    "category": "Category A - Factual",
+    "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "5.1.1"
+      }
+    ],
+    "notes": "REQ-CSA_NSA-FUN in TS 28.535 §5.1.1."
+  },
+  {
+    "id": "G008",
+    "category": "Category A - Factual",
+    "question": "What transmission numerologies and subcarrier spacings are supported in the NR physical layer?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "5.1"
+      }
+    ],
+    "notes": "NR numerologies in TS 38.300 §5.1."
+  },
+  {
+    "id": "G009",
+    "category": "Category B - Procedural",
+    "question": "What are the procedural steps for General Registration in the 5G System?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.2.2.2.2"
+      }
+    ],
+    "notes": "General registration call flows in TS 23.502 §4.2.2.2.2."
+  },
+  {
+    "id": "G010",
+    "category": "Category B - Procedural",
+    "question": "How is the UE-requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.3.2.2.1"
+      }
+    ],
+    "notes": "PDU Session Establishment in TS 23.502 §4.3.2.2.1."
+  },
+  {
+    "id": "G011",
+    "category": "Category B - Procedural",
+    "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "9.2.1"
+      }
+    ],
+    "notes": "Handover in TS 38.300 §9.2.1."
+  },
+  {
+    "id": "G012",
+    "category": "Category B - Procedural",
+    "question": "What actions does the UE take when an initial registration is accepted by the network?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "5.5.1.2.4"
+      }
+    ],
+    "notes": "Registration accept actions in TS 24.501 §5.5.1.2.4."
+  },
+  {
+    "id": "G013",
+    "category": "Category B - Procedural",
+    "question": "What general requirements apply to registration management procedures in 5GS?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.502",
+        "clause_number": "4.2.2.1"
+      }
+    ],
+    "notes": "Registration management in TS 23.502 §4.2.2.1."
+  },
+  {
+    "id": "G014",
+    "category": "Category B - Procedural",
+    "question": "What requirements govern the establishment and handling of 5G NAS security contexts?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.4.2"
+      }
+    ],
+    "notes": "NAS security context handling in TS 24.501 §4.4.2."
+  },
+  {
+    "id": "G015",
+    "category": "Category C - Table",
+    "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.6.1"
+      }
+    ],
+    "notes": "Table 5.6.1-1 in TS 23.501 §5.6.1."
+  },
+  {
+    "id": "G016",
+    "category": "Category C - Table",
+    "question": "What standardized 5QI characteristics and QoS packet delay budgets are defined in Table 5.7.1.3-1?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "5.7.1.3"
+      }
+    ],
+    "notes": "Table 5.7.1.3-1 5QI characteristics in TS 23.501 §5.7.1.3."
+  },
+  {
+    "id": "G017",
+    "category": "Category C - Table",
+    "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.3.3"
+      }
+    ],
+    "notes": "Table 4.3.3.1 in TS 24.501 §4.3.3."
+  },
+  {
+    "id": "G018",
+    "category": "Category C - Table",
+    "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "8.2.1"
+      }
+    ],
+    "notes": "Table 8.2.1.1.1 in TS 24.501 §8.2.1."
+  },
+  {
+    "id": "G019",
+    "category": "Category D - Multi-Clause",
+    "question": "What does TS 28.535 specify about closed control loops and their governance?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 28.535",
+        "clause_number": "4.2.4"
+      },
+      {
+        "specification": "TS 28.535",
+        "clause_number": "4.2.5.2"
+      }
+    ],
+    "notes": "Multi-clause: TS 28.535 §4.2.4 (Loops) and §4.2.5.2 (Governance)."
+  },
+  {
+    "id": "G020",
+    "category": "Category D - Multi-Clause",
+    "question": "How are NG-RAN architecture and NG interface protocols structured across user plane and control plane in TS 38.300?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 38.300",
+        "clause_number": "4.3.1.1"
+      },
+      {
+        "specification": "TS 38.300",
+        "clause_number": "4.3.1.2"
+      }
+    ],
+    "notes": "Multi-clause: NG-U in §4.3.1.1 and NG-C in §4.3.1.2."
+  },
+  {
+    "id": "G021",
+    "category": "Category D - Multi-Clause",
+    "question": "How do AMF and UPF functional responsibilities complement each other in the 5G Core architecture?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.1"
+      },
+      {
+        "specification": "TS 23.501",
+        "clause_number": "6.2.3"
+      }
+    ],
+    "notes": "Multi-clause: AMF in §6.2.1 and UPF in §6.2.3."
+  },
+  {
+    "id": "G022",
+    "category": "Category D - Multi-Clause",
+    "question": "What are the rules for establishment of 5G NAS security contexts and the handling of security keys?",
+    "expected_behavior": "answer",
+    "supporting_evidence": [
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.4.2.1.1"
+      },
+      {
+        "specification": "TS 24.501",
+        "clause_number": "4.4.2.2"
+      }
+    ],
+    "notes": "Multi-clause: Context establishment in §4.4.2.1.1 and keys in §4.4.2.2."
+  },
+  {
+    "id": "G023",
+    "category": "Category E - Unanswerable In-Corpus",
+    "question": "What is the exact battery life specification in hours for 5G RedCap devices in TS 38.300?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "TS 38.300 specifies RedCap architectural features, but does not define an exact battery life in hours."
+  },
+  {
+    "id": "G024",
+    "category": "Category E - Unanswerable In-Corpus",
+    "question": "What is the pricing model in USD for network slice instances defined in TS 28.535?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "TS 28.535 specifies technical service assurance, not commercial currency pricing."
+  },
+  {
+    "id": "G025",
+    "category": "Category E - Unanswerable In-Corpus",
+    "question": "What is the minimum physical CPU clock frequency required to execute the AMF binary in TS 23.501?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "3GPP specifications define logical architectures, not specific vendor hardware clock speeds."
+  },
+  {
+    "id": "G026",
+    "category": "Category E - Unanswerable In-Corpus",
+    "question": "What is the exact microwave oven interference tolerance threshold for gNB antennas in TS 38.300?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "Microwave oven interference thresholds are not part of TS 38.300."
+  },
+  {
+    "id": "G027",
+    "category": "Category F - Out-of-Corpus",
+    "question": "What are the quantum key distribution (QKD) key exchange formulas specified in IEEE 802.11ax?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "IEEE 802.11ax and QKD are completely outside 3GPP 5G specifications."
+  },
+  {
+    "id": "G028",
+    "category": "Category F - Out-of-Corpus",
+    "question": "How does Kubernetes implement the Container Network Interface (CNI) plugin according to the Cloud Native Computing Foundation?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "CNCF Kubernetes architecture is out-of-corpus."
+  },
+  {
+    "id": "G029",
+    "category": "Category G - Adversarial / False Premise",
+    "question": "How does the Access and Mobility Management Function (AMF) perform user plane packet routing and N6 encapsulation directly to the internet?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "False premise: AMF is a control-plane function; UPF handles user-plane packet routing and N6 encapsulation."
+  },
+  {
+    "id": "G030",
+    "category": "Category G - Adversarial / False Premise",
+    "question": "What is the standardized 5QI value for 7G holographic teleportation defined in Table 5.7.1.3-1 of TS 23.501?",
+    "expected_behavior": "abstain",
+    "supporting_evidence": [],
+    "notes": "False premise: Table 5.7.1.3-1 specifies 5G standard 5QIs, not fictional 7G holographic teleportation."
+  }
+]

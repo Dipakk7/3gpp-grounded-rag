@@ -1,0 +1,2987 @@
+{
+  "benchmark_queries_count": 21,
+  "corpus_total_chunks": 6737,
+  "indexed_chunks_chromadb": 6737,
+  "semantic_baseline": {
+    "total_queries": 21,
+    "hit@1": 0.6667,
+    "hit@3": 0.7619,
+    "hit@5": 0.8095,
+    "hit@10": 0.8571,
+    "mrr": 0.7251,
+    "detailed_results": [
+      {
+        "id": "R001",
+        "category": "Category A - Direct Factual",
+        "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1",
+            "clause_title": "AMF",
+            "score": 0.8203,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.16.14.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.16.14.2.1",
+            "clause_title": "Management of access and mobility related policy information at start and stop of application traffic",
+            "score": 0.7623,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.15.4.2-P002",
+            "specification": "TS 23.502",
+            "clause_number": "4.15.4.2",
+            "clause_title": "Exposure of Mobility Events from AMF",
+            "score": 0.754,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R002",
+        "category": "Category A - Direct Factual",
+        "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3",
+            "clause_title": "UPF",
+            "score": 0.8433,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-4.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.1",
+            "clause_title": "General concepts",
+            "score": 0.7865,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.2-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.2",
+            "clause_title": "Network Functions and entities",
+            "score": 0.7737,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R003",
+        "category": "Category A - Direct Factual",
+        "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-4.3.1.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1",
+            "clause_title": "NG User Plane",
+            "score": 0.8686,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-4.3.2.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.3.2.1",
+            "clause_title": "Xn User Plane",
+            "score": 0.7796,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-4.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.1",
+            "clause_title": "Overall Architecture",
+            "score": 0.779,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R004",
+        "category": "Category A - Direct Factual",
+        "question": "What factors and criteria are used for UPF selection during PDU session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3",
+            "clause_title": "Selection of an UPF for a particular PDU Session",
+            "score": 0.832,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.1",
+            "clause_title": "Overview",
+            "score": 0.8035,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.3-P002",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3",
+            "clause_title": "Selection of an UPF for a particular PDU Session",
+            "score": 0.7941,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R005",
+        "category": "Category B - Procedural",
+        "question": "What are the procedural steps for General Registration in the 5G System?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.2.2"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.2-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.2",
+            "clause_title": "Initial registration initiation",
+            "score": 0.8033,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.3.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.3.3",
+            "clause_title": "5GMM common procedure initiation",
+            "score": 0.797,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.1",
+            "clause_title": "General",
+            "score": 0.7959,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R006",
+        "category": "Category B - Procedural",
+        "question": "How is the UE requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.3.2.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1",
+            "clause_title": "Non-roaming and Roaming with Local Breakout",
+            "score": 0.8456,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.3.3.2-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.3.3.2",
+            "clause_title": "UE or network requested PDU Session Modification (non-roaming and roaming with local breakout)",
+            "score": 0.8443,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.3.4.2-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.3.4.2",
+            "clause_title": "UE or network requested PDU Session Release for Non-Roaming and Roaming with Local Breakout",
+            "score": 0.8392,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R007",
+        "category": "Category B - Procedural",
+        "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.2"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.2.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1",
+            "clause_title": "C-Plane Handling",
+            "score": 0.788,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.9.1.3.3-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.3",
+            "clause_title": "Execution phase",
+            "score": 0.7658,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.4.2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.4.2",
+            "clause_title": "C-plane handling",
+            "score": 0.763,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R008",
+        "category": "Category B - Procedural",
+        "question": "What actions does the UE take when an initial registration is accepted by the network?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.4"
+          }
+        ],
+        "first_relevant_rank": 7,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": true,
+        "reciprocal_rank": 0.1429,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.3.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.3.2.1",
+            "clause_title": "General",
+            "score": 0.7889,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.2-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.2",
+            "clause_title": "Initial registration initiation",
+            "score": 0.7886,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.2.2.3.8-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.2.2.3.8",
+            "clause_title": "INITIAL-REGISTRATION-NEEDED",
+            "score": 0.7848,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R009",
+        "category": "Category C - Terminology/Concept",
+        "question": "What are the standardized 5QI characteristics and QoS packet delay budgets defined in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.4"
+          },
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4"
+          }
+        ],
+        "first_relevant_rank": 3,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.3333,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.1",
+            "clause_title": "General",
+            "score": 0.8615,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.2.1",
+            "clause_title": "5QI",
+            "score": 0.8269,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.4-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4",
+            "clause_title": "Standardized 5QI to QoS characteristics mapping",
+            "score": 0.7878,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R010",
+        "category": "Category C - Terminology/Concept",
+        "question": "How is a closed control loop defined and described in communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.1"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.8647,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.4.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.2",
+            "clause_title": "Lifecycle phases",
+            "score": 0.8414,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.1",
+            "clause_title": "Overview",
+            "score": 0.8211,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R011",
+        "category": "Category C - Terminology/Concept",
+        "question": "What reference points and service-based representations are defined in the non-roaming 5G reference architecture?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3",
+            "clause_title": "Non-roaming reference architecture",
+            "score": 0.8271,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.1",
+            "clause_title": "General",
+            "score": 0.7872,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.7-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.7",
+            "clause_title": "Reference points",
+            "score": 0.7856,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R012",
+        "category": "Category C - Terminology/Concept",
+        "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "3.1"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.796,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.4.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.2",
+            "clause_title": "Lifecycle phases",
+            "score": 0.7949,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-6.1.4-P002",
+            "specification": "TS 28.535",
+            "clause_number": "6.1.4",
+            "clause_title": "Communication service SLS assurance control",
+            "score": 0.7785,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R013",
+        "category": "Category D - Clause-Specific",
+        "question": "What requirements govern the handling and establishment of 5G NAS security contexts?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P003",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.8562,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.8552,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P004",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.8545,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R014",
+        "category": "Category D - Clause-Specific",
+        "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "5.1.1"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-Introduction-P001",
+            "specification": "TS 28.535",
+            "clause_number": "Introduction",
+            "clause_title": "Introduction",
+            "score": 0.7704,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-5.1.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "5.1.1",
+            "clause_title": "Communication service assurance",
+            "score": 0.7684,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.7511,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R015",
+        "category": "Category D - Clause-Specific",
+        "question": "What general requirements apply to registration management procedures in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1",
+            "clause_title": "General",
+            "score": 0.8105,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.1",
+            "clause_title": "General",
+            "score": 0.8091,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.1.3.2.1.4.4-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.1.3.2.1.4.4",
+            "clause_title": "5GMM-REGISTERED.ATTEMPTING-REGISTRATION-UPDATE",
+            "score": 0.8069,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R016",
+        "category": "Category D - Clause-Specific",
+        "question": "What transmission numerologies and subcarrier spacings are supported in NR physical layer?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "5.1"
+          }
+        ],
+        "first_relevant_rank": 4,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.25,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-6.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "6.1",
+            "clause_title": "Overview",
+            "score": 0.7692,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-16.9.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "16.9.1",
+            "clause_title": "General",
+            "score": 0.7417,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-3.2-P005",
+            "specification": "TS 38.300",
+            "clause_number": "3.2",
+            "clause_title": "Definitions",
+            "score": 0.7381,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R017",
+        "category": "Category E - Table-Related",
+        "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.6.1-TS23501-T001",
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1",
+            "clause_title": "Overview",
+            "score": 0.82,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.6.1-P003",
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1",
+            "clause_title": "Overview",
+            "score": 0.7983,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-9.11.3.13-P001",
+            "specification": "TS 24.501",
+            "clause_number": "9.11.3.13",
+            "clause_title": "Allowed PDU session status",
+            "score": 0.7763,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R018",
+        "category": "Category E - Table-Related",
+        "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 0.8526,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-TS24501-T001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 0.8172,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-8.2.6.11-P001",
+            "specification": "TS 24.501",
+            "clause_number": "8.2.6.11",
+            "clause_title": "UE status",
+            "score": 0.7632,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R019",
+        "category": "Category E - Table-Related",
+        "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "8.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-8.2.1.1-TS24501-T011",
+            "specification": "TS 24.501",
+            "clause_number": "8.2.1.1",
+            "clause_title": "Message definition",
+            "score": 0.8137,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-8.2.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "8.2.1.1",
+            "clause_title": "Message definition",
+            "score": 0.8005,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-8.2.2.1-TS24501-T012",
+            "specification": "TS 24.501",
+            "clause_number": "8.2.2.1",
+            "clause_title": "Message definition",
+            "score": 0.7907,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R020",
+        "category": "Category E - Table-Related",
+        "question": "What 5GSM sublayer states in the UE are defined in the state description table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-6.1.3.2.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2.1",
+            "clause_title": "Overview",
+            "score": 0.8457,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.1.3.2.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.1.3.2.1.1",
+            "clause_title": "General",
+            "score": 0.8366,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.1.3.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.1.3.1",
+            "clause_title": "General",
+            "score": 0.8147,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R021",
+        "category": "Category D - Clause-Specific",
+        "question": "What does TS 28.535 specify about closed control loops and their governance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4"
+          },
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2",
+            "clause_title": "Closed control loop governance",
+            "score": 0.8363,
+            "method": "semantic"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.1",
+            "clause_title": "Overview",
+            "score": 0.8214,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-Introduction-P001",
+            "specification": "TS 28.535",
+            "clause_number": "Introduction",
+            "clause_title": "Introduction",
+            "score": 0.7801,
+            "method": "semantic"
+          }
+        ]
+      }
+    ]
+  },
+  "bm25_lexical": {
+    "total_queries": 21,
+    "hit@1": 0.3333,
+    "hit@3": 0.5714,
+    "hit@5": 0.6667,
+    "hit@10": 0.8095,
+    "mrr": 0.4731,
+    "detailed_results": [
+      {
+        "id": "R001",
+        "category": "Category A - Direct Factual",
+        "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1"
+          }
+        ],
+        "first_relevant_rank": 7,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": true,
+        "reciprocal_rank": 0.1429,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.2-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.2",
+            "clause_title": "Network Functions and entities",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-4.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.1",
+            "clause_title": "Overall Architecture",
+            "score": 0.9567,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-4.2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.2",
+            "clause_title": "Functional Split",
+            "score": 0.8589,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R002",
+        "category": "Category A - Direct Factual",
+        "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3",
+            "clause_title": "UPF",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.13-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.13",
+            "clause_title": "Support for Edge Computing",
+            "score": 0.9269,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.2-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.2",
+            "clause_title": "Network Functions and entities",
+            "score": 0.9045,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R003",
+        "category": "Category A - Direct Factual",
+        "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-4.3.1.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1",
+            "clause_title": "NG User Plane",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-4.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.1",
+            "clause_title": "Overall Architecture",
+            "score": 0.7344,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-3.2-P004",
+            "specification": "TS 38.300",
+            "clause_number": "3.2",
+            "clause_title": "Definitions",
+            "score": 0.6719,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R004",
+        "category": "Category A - Direct Factual",
+        "question": "What factors and criteria are used for UPF selection during PDU session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3"
+          }
+        ],
+        "first_relevant_rank": 4,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.25,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.16.3.11-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.16.3.11",
+            "clause_title": "P-CSCF discovery and selection",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.23-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.23",
+            "clause_title": "EASDF discovery and selection",
+            "score": 0.9196,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.1",
+            "clause_title": "Overview",
+            "score": 0.8884,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R005",
+        "category": "Category B - Procedural",
+        "question": "What are the procedural steps for General Registration in the 5G System?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.2.2"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.9.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.9.1",
+            "clause_title": "General",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.12.8-P013",
+            "specification": "TS 23.502",
+            "clause_number": "4.12.8",
+            "clause_title": "Mobility from a non-geographically selected AMF to a geographically selected AMF",
+            "score": 0.9601,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "1",
+            "clause_title": "Scope",
+            "score": 0.9597,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R006",
+        "category": "Category B - Procedural",
+        "question": "How is the UE requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 4,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.25,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.11.1.4.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.11.1.4.1",
+            "clause_title": "EPS bearer ID allocation",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.12.5-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.12.5",
+            "clause_title": "UE Requested PDU Session Establishment via Untrusted non-3GPP Access",
+            "score": 0.9881,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.12.7-P002",
+            "specification": "TS 23.502",
+            "clause_number": "4.12.7",
+            "clause_title": "UE or network Requested PDU Session Release via Untrusted non-3GPP access",
+            "score": 0.9431,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R007",
+        "category": "Category B - Procedural",
+        "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.2"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.3"
+          }
+        ],
+        "first_relevant_rank": 3,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.3333,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.4.2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.4.2",
+            "clause_title": "C-plane handling",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.9.1.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.2.1",
+            "clause_title": "General",
+            "score": 0.8104,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.2.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1",
+            "clause_title": "C-Plane Handling",
+            "score": 0.8071,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R008",
+        "category": "Category B - Procedural",
+        "question": "What actions does the UE take when an initial registration is accepted by the network?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.4"
+          }
+        ],
+        "first_relevant_rank": 6,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": true,
+        "reciprocal_rank": 0.1667,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.3.4-P009",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.3.4",
+            "clause_title": "Mobility and periodic registration update accepted by the network",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.6-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.6",
+            "clause_title": "Initial registration for emergency services not accepted by the network",
+            "score": 0.9088,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.6-P003",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.6",
+            "clause_title": "Initial registration for emergency services not accepted by the network",
+            "score": 0.8844,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R009",
+        "category": "Category C - Terminology/Concept",
+        "question": "What are the standardized 5QI characteristics and QoS packet delay budgets defined in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.4"
+          },
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4"
+          }
+        ],
+        "first_relevant_rank": 3,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.3333,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.27.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.27.3",
+            "clause_title": "Support for TSC QoS Flows",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.1",
+            "clause_title": "General",
+            "score": 0.9799,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.4-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4",
+            "clause_title": "Standardized 5QI to QoS characteristics mapping",
+            "score": 0.9255,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R010",
+        "category": "Category C - Terminology/Concept",
+        "question": "How is a closed control loop defined and described in communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.1"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.1",
+            "clause_title": "Overview",
+            "score": 0.8994,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.4.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.2",
+            "clause_title": "Lifecycle phases",
+            "score": 0.8885,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R011",
+        "category": "Category C - Terminology/Concept",
+        "question": "What reference points and service-based representations are defined in the non-roaming 5G reference architecture?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.1",
+            "clause_title": "General",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3",
+            "clause_title": "Non-roaming reference architecture",
+            "score": 0.9096,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.7-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.7",
+            "clause_title": "Reference points",
+            "score": 0.8977,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R012",
+        "category": "Category C - Terminology/Concept",
+        "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "3.1"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-6.1.4-P001",
+            "specification": "TS 28.535",
+            "clause_number": "6.1.4",
+            "clause_title": "Communication service SLS assurance control",
+            "score": 0.9933,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.4.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.2",
+            "clause_title": "Lifecycle phases",
+            "score": 0.9328,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R013",
+        "category": "Category D - Clause-Specific",
+        "question": "What requirements govern the handling and establishment of 5G NAS security contexts?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P003",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P002",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.9915,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.1",
+            "clause_title": "General",
+            "score": 0.8769,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R014",
+        "category": "Category D - Clause-Specific",
+        "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "5.1.1"
+          }
+        ],
+        "first_relevant_rank": 8,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": true,
+        "reciprocal_rank": 0.125,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-Introduction-P001",
+            "specification": "TS 28.535",
+            "clause_number": "Introduction",
+            "clause_title": "Introduction",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-6.1.4-P002",
+            "specification": "TS 28.535",
+            "clause_number": "6.1.4",
+            "clause_title": "Communication service SLS assurance control",
+            "score": 0.998,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-Annex_A-TS28535-T001",
+            "specification": "TS 28.535",
+            "clause_number": "Annex A",
+            "clause_title": "Change history",
+            "score": 0.9457,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R015",
+        "category": "Category D - Clause-Specific",
+        "question": "What general requirements apply to registration management procedures in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.1",
+            "clause_title": "General",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1",
+            "clause_title": "General",
+            "score": 0.9781,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "2",
+            "clause_title": "References",
+            "score": 0.9273,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R016",
+        "category": "Category D - Clause-Specific",
+        "question": "What transmission numerologies and subcarrier spacings are supported in NR physical layer?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "5.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-5.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "5.1",
+            "clause_title": "Waveform, numerology and frame structure",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-5.3.4-P001",
+            "specification": "TS 38.300",
+            "clause_number": "5.3.4",
+            "clause_title": "Random access",
+            "score": 0.8908,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-16.1.2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "16.1.2",
+            "clause_title": "LCP Restrictions",
+            "score": 0.8515,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R017",
+        "category": "Category E - Table-Related",
+        "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.6.1-TS23501-T001",
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-6.4.1.2-P007",
+            "specification": "TS 24.501",
+            "clause_number": "6.4.1.2",
+            "clause_title": "UE-requested PDU session establishment procedure initiation",
+            "score": 0.9602,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.1",
+            "clause_title": "Overview",
+            "score": 0.9481,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R018",
+        "category": "Category E - Table-Related",
+        "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.4-TS24501-T002",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.4",
+            "clause_title": "Change or determination of IMS voice availability",
+            "score": 0.8742,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-TS24501-T001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 0.8271,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R019",
+        "category": "Category E - Table-Related",
+        "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "8.2.1"
+          }
+        ],
+        "first_relevant_rank": null,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": false,
+        "hit@10": false,
+        "reciprocal_rank": 0.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-D.8.6.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "D.8.6.3",
+            "clause_title": "Repeated IEs",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-7.6.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "7.6.3",
+            "clause_title": "Repeated IEs",
+            "score": 0.9957,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-7.6.4.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "7.6.4.3",
+            "clause_title": "Repeated IEs",
+            "score": 0.9305,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R020",
+        "category": "Category E - Table-Related",
+        "question": "What 5GSM sublayer states in the UE are defined in the state description table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-6.1.3.2.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-6.1.3.3.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.3.1",
+            "clause_title": "Overview",
+            "score": 0.9722,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.1.3.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.1.3.1",
+            "clause_title": "General",
+            "score": 0.9334,
+            "method": "bm25"
+          }
+        ]
+      },
+      {
+        "id": "R021",
+        "category": "Category D - Clause-Specific",
+        "question": "What does TS 28.535 specify about closed control loops and their governance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4"
+          },
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2"
+          }
+        ],
+        "first_relevant_rank": 3,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.3333,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.6-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.6",
+            "clause_title": "Coordination between closed control loops",
+            "score": 1.0,
+            "method": "bm25"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.1",
+            "clause_title": "Overview",
+            "score": 0.9915,
+            "method": "bm25"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2",
+            "clause_title": "Closed control loop governance",
+            "score": 0.7917,
+            "method": "bm25"
+          }
+        ]
+      }
+    ]
+  },
+  "hybrid_rrf": {
+    "total_queries": 21,
+    "hit@1": 0.6667,
+    "hit@3": 0.9048,
+    "hit@5": 1.0,
+    "hit@10": 1.0,
+    "mrr": 0.7992,
+    "detailed_results": [
+      {
+        "id": "R001",
+        "category": "Category A - Direct Factual",
+        "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.1",
+            "clause_title": "AMF",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.15.6.9.2-P002",
+            "specification": "TS 23.502",
+            "clause_number": "4.15.6.9.2",
+            "clause_title": "Processing AF requests to influence access and mobility management policies targeting an individual UE",
+            "score": 0.8225,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.1",
+            "clause_title": "General",
+            "score": 0.8113,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R002",
+        "category": "Category A - Direct Factual",
+        "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.2.3",
+            "clause_title": "UPF",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.2-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.2",
+            "clause_title": "Network Functions and entities",
+            "score": 0.9683,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.1",
+            "clause_title": "General concepts",
+            "score": 0.9545,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R003",
+        "category": "Category A - Direct Factual",
+        "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-4.3.1.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.3.1.1",
+            "clause_title": "NG User Plane",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-4.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.1",
+            "clause_title": "Overall Architecture",
+            "score": 0.7496,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-4.3.2.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "4.3.2.1",
+            "clause_title": "Xn User Plane",
+            "score": 0.7429,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R004",
+        "category": "Category A - Direct Factual",
+        "question": "What factors and criteria are used for UPF selection during PDU session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.3.3-P002",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.3.3",
+            "clause_title": "Selection of an UPF for a particular PDU Session",
+            "score": 0.9842,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-6.3.7.1-P002",
+            "specification": "TS 23.501",
+            "clause_number": "6.3.7.1",
+            "clause_title": "PCF discovery and selection for a UE or a PDU Session",
+            "score": 0.9427,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R005",
+        "category": "Category B - Procedural",
+        "question": "What are the procedural steps for General Registration in the 5G System?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.2.2"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.11.2.3-P002",
+            "specification": "TS 23.502",
+            "clause_number": "4.11.2.3",
+            "clause_title": "EPS to 5GS Mobility",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.2.2.2-P032",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.2.2",
+            "clause_title": "General Registration",
+            "score": 0.8584,
+            "method": "semantic"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.11.5.2-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.11.5.2",
+            "clause_title": "Registration procedure",
+            "score": 0.7687,
+            "method": "semantic"
+          }
+        ]
+      },
+      {
+        "id": "R006",
+        "category": "Category B - Procedural",
+        "question": "How is the UE requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.3.2.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1",
+            "clause_title": "Non-roaming and Roaming with Local Breakout",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.502-V18.14.0-4.22.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.22.2.1",
+            "clause_title": "Non-roaming and Roaming with Local Breakout",
+            "score": 0.8225,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.3.2.2.1-P002",
+            "specification": "TS 23.502",
+            "clause_number": "4.3.2.2.1",
+            "clause_title": "Non-roaming and Roaming with Local Breakout",
+            "score": 0.8212,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R007",
+        "category": "Category B - Procedural",
+        "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.2"
+          },
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.2.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.2.1",
+            "clause_title": "C-Plane Handling",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-9.2.3.4.2-P001",
+            "specification": "TS 38.300",
+            "clause_number": "9.2.3.4.2",
+            "clause_title": "C-plane handling",
+            "score": 0.9936,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.502-V18.14.0-4.9.1.3.3-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.9.1.3.3",
+            "clause_title": "Execution phase",
+            "score": 0.9614,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R008",
+        "category": "Category B - Procedural",
+        "question": "What actions does the UE take when an initial registration is accepted by the network?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.4"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.4-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.4",
+            "clause_title": "Initial registration accepted by the network",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.6-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.6",
+            "clause_title": "Initial registration for emergency services not accepted by the network",
+            "score": 0.998,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.2.6-P003",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.2.6",
+            "clause_title": "Initial registration for emergency services not accepted by the network",
+            "score": 0.8888,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R009",
+        "category": "Category C - Terminology/Concept",
+        "question": "What are the standardized 5QI characteristics and QoS packet delay budgets defined in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.4"
+          },
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4"
+          }
+        ],
+        "first_relevant_rank": 3,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.3333,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.3.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.3.1",
+            "clause_title": "General",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.2.1-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.2.1",
+            "clause_title": "5QI",
+            "score": 0.9779,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-5.7.4-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.7.4",
+            "clause_title": "Standardized 5QI to QoS characteristics mapping",
+            "score": 0.9745,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R010",
+        "category": "Category C - Terminology/Concept",
+        "question": "How is a closed control loop defined and described in communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4.1"
+          }
+        ],
+        "first_relevant_rank": 5,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.2,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.1",
+            "clause_title": "Overview",
+            "score": 0.937,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P002",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.8267,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R011",
+        "category": "Category C - Terminology/Concept",
+        "question": "What reference points and service-based representations are defined in the non-roaming 5G reference architecture?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.3-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3",
+            "clause_title": "Non-roaming reference architecture",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.7-P001",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.7",
+            "clause_title": "Reference points",
+            "score": 0.9745,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_23.501-V18.12.0-4.2.3-P002",
+            "specification": "TS 23.501",
+            "clause_number": "4.2.3",
+            "clause_title": "Non-roaming reference architecture",
+            "score": 0.9593,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R012",
+        "category": "Category C - Terminology/Concept",
+        "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "3.1"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-3.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "3.1",
+            "clause_title": "Terms",
+            "score": 0.8822,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.8756,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R013",
+        "category": "Category D - Clause-Specific",
+        "question": "What requirements govern the handling and establishment of 5G NAS security contexts?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P003",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.9491,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.4.2.1.1-P002",
+            "specification": "TS 24.501",
+            "clause_number": "4.4.2.1.1",
+            "clause_title": "Establishment of 5G NAS security context",
+            "score": 0.9481,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R014",
+        "category": "Category D - Clause-Specific",
+        "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "5.1.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-5.1.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "5.1.1",
+            "clause_title": "Communication service assurance",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.9548,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.3-P002",
+            "specification": "TS 28.535",
+            "clause_number": "4.3",
+            "clause_title": "Communication service assurance service",
+            "score": 0.8884,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R015",
+        "category": "Category D - Clause-Specific",
+        "question": "What general requirements apply to registration management procedures in 5GS?",
+        "expected": [
+          {
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.502-V18.14.0-4.2.2.1-P001",
+            "specification": "TS 23.502",
+            "clause_number": "4.2.2.1",
+            "clause_title": "General",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-5.5.1.3.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.5.1.3.3",
+            "clause_title": "5GMM common procedure initiation",
+            "score": 0.6231,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-4.7.2.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.7.2.1",
+            "clause_title": "General",
+            "score": 0.5524,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R016",
+        "category": "Category D - Clause-Specific",
+        "question": "What transmission numerologies and subcarrier spacings are supported in NR physical layer?",
+        "expected": [
+          {
+            "specification": "TS 38.300",
+            "clause_number": "5.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_38.300-V18.10.0-5.1-P001",
+            "specification": "TS 38.300",
+            "clause_number": "5.1",
+            "clause_title": "Waveform, numerology and frame structure",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_38.300-V18.10.0-8.4-P001",
+            "specification": "TS 38.300",
+            "clause_number": "8.4",
+            "clause_title": "NR sidelink communication, V2X sidelink communication and Ranging/Sidelink positioning related identities",
+            "score": 0.9629,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_38.300-V18.10.0-3.2-P005",
+            "specification": "TS 38.300",
+            "clause_number": "3.2",
+            "clause_title": "Definitions",
+            "score": 0.9465,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R017",
+        "category": "Category E - Table-Related",
+        "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+        "expected": [
+          {
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_23.501-V18.12.0-5.6.1-TS23501-T001",
+            "specification": "TS 23.501",
+            "clause_number": "5.6.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_23.501-V18.12.0-5.32.2-P001",
+            "specification": "TS 23.501",
+            "clause_number": "5.32.2",
+            "clause_title": "Multi Access PDU Sessions",
+            "score": 0.8681,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-6.2.9.2-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.2.9.2",
+            "clause_title": "URSP",
+            "score": 0.8317,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R018",
+        "category": "Category E - Table-Related",
+        "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-P001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-4.3.3-TS24501-T001",
+            "specification": "TS 24.501",
+            "clause_number": "4.3.3",
+            "clause_title": "Change of UE's usage setting",
+            "score": 0.9776,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-9.11.3.55-P001",
+            "specification": "TS 24.501",
+            "clause_number": "9.11.3.55",
+            "clause_title": "UE's usage setting",
+            "score": 0.9361,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R019",
+        "category": "Category E - Table-Related",
+        "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "8.2.1"
+          }
+        ],
+        "first_relevant_rank": 4,
+        "hit@1": false,
+        "hit@3": false,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.25,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-8.1-P002",
+            "specification": "TS 24.501",
+            "clause_number": "8.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-8.2.7.54.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "8.2.7.54.1",
+            "clause_title": "General",
+            "score": 0.9928,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-9.11.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "9.11.1",
+            "clause_title": "General",
+            "score": 0.9149,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R020",
+        "category": "Category E - Table-Related",
+        "question": "What 5GSM sublayer states in the UE are defined in the state description table?",
+        "expected": [
+          {
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2"
+          }
+        ],
+        "first_relevant_rank": 1,
+        "hit@1": true,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 1.0,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_24.501-V18.13.0-6.1.3.2.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.2.1",
+            "clause_title": "Overview",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_24.501-V18.13.0-6.1.3.3.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "6.1.3.3.1",
+            "clause_title": "Overview",
+            "score": 0.9654,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_24.501-V18.13.0-5.1.3.2.1.1-P001",
+            "specification": "TS 24.501",
+            "clause_number": "5.1.3.2.1.1",
+            "clause_title": "General",
+            "score": 0.7773,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      },
+      {
+        "id": "R021",
+        "category": "Category D - Clause-Specific",
+        "question": "What does TS 28.535 specify about closed control loops and their governance?",
+        "expected": [
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.4"
+          },
+          {
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2"
+          }
+        ],
+        "first_relevant_rank": 2,
+        "hit@1": false,
+        "hit@3": true,
+        "hit@5": true,
+        "hit@10": true,
+        "reciprocal_rank": 0.5,
+        "top_retrieved": [
+          {
+            "rank": 1,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.2",
+            "clause_title": "Control loops",
+            "score": 1.0,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.2-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.2",
+            "clause_title": "Closed control loop governance",
+            "score": 0.8938,
+            "method": "hybrid (dense+bm25)"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "TS_28.535-V18.2.0-4.2.5.1-P001",
+            "specification": "TS 28.535",
+            "clause_number": "4.2.5.1",
+            "clause_title": "Overview",
+            "score": 0.8907,
+            "method": "hybrid (dense+bm25)"
+          }
+        ]
+      }
+    ]
+  },
+  "latency_ms": {
+    "query_embedding_avg_ms": 2199.95,
+    "vector_search_avg_ms": 6.43,
+    "bm25_search_avg_ms": 64.09,
+    "total_hybrid_avg_ms": 2279.01
+  }
+}

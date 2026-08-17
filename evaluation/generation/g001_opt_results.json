@@ -1,0 +1,86 @@
+[
+  {
+    "config": "Baseline_np_1024",
+    "num_predict": 1024,
+    "latency_s": 122.06,
+    "output_tokens": 0,
+    "complete": false,
+    "citations_valid": false,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": "Error: timed out"
+  },
+  {
+    "config": "Baseline_np_512",
+    "num_predict": 512,
+    "latency_s": 1184.29,
+    "output_tokens": 512,
+    "complete": false,
+    "citations_valid": true,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": null
+  },
+  {
+    "config": "Baseline_np_384",
+    "num_predict": 384,
+    "latency_s": 43.77,
+    "output_tokens": 384,
+    "complete": false,
+    "citations_valid": true,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": null
+  },
+  {
+    "config": "Baseline_np_256",
+    "num_predict": 256,
+    "latency_s": 31.55,
+    "output_tokens": 256,
+    "complete": false,
+    "citations_valid": true,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": null
+  },
+  {
+    "config": "Concise_np_512",
+    "num_predict": 512,
+    "latency_s": 122.05,
+    "output_tokens": 0,
+    "complete": false,
+    "citations_valid": false,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": "Error: timed out"
+  },
+  {
+    "config": "Concise_np_384",
+    "num_predict": 384,
+    "latency_s": 43.84,
+    "output_tokens": 384,
+    "complete": false,
+    "citations_valid": true,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": null
+  },
+  {
+    "config": "Concise_np_256",
+    "num_predict": 256,
+    "latency_s": 28.51,
+    "output_tokens": 256,
+    "complete": false,
+    "citations_valid": true,
+    "claims_supported": false,
+    "claims_count": 0,
+    "is_truncated": true,
+    "answer_preview": null
+  }
+]

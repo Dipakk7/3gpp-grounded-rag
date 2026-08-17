@@ -1,0 +1,1177 @@
+{
+  "benchmark_total_questions": 30,
+  "answerable_questions": 22,
+  "unanswerable_questions": 8,
+  "answer_correctness_rate": 63.64,
+  "citation_validity_rate": 100.0,
+  "citation_completeness_rate": 100.0,
+  "claim_support_rate": 100.0,
+  "unsupported_claim_rate": 0.0,
+  "abstention_accuracy": 100.0,
+  "false_answer_rate": 0.0,
+  "latencies_ms": {
+    "retrieval_mean_ms": 2399.09,
+    "generation_mean_ms": 115731.04,
+    "verification_mean_ms": 0.06,
+    "total_mean_ms": 118130.52,
+    "total_median_ms": 90597.73,
+    "total_p95_ms": 124822.99
+  },
+  "detailed_results": [
+    {
+      "id": "G001",
+      "category": "Category A - Factual",
+      "question": "What are the primary functional responsibilities of the Access and Mobility Management Function (AMF)?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "LLM generation failed: timed out",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2753.02,
+        "gate_ms": 0.03,
+        "generation_ms": 122069.77,
+        "total_ms": 124822.99
+      }
+    },
+    {
+      "id": "G002",
+      "category": "Category A - Factual",
+      "question": "What functionalities are supported by the User Plane Function (UPF) in the 5G Core network?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "Malformed JSON output from model: {\n  \"status\": \"answered\",\n  \"claims\": [\n    {\n      \"text\": \"The User plane function (UPF) includes ...",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2288.3,
+        "gate_ms": 0.02,
+        "generation_ms": 116857.09,
+        "total_ms": 119145.62
+      }
+    },
+    {
+      "id": "G003",
+      "category": "Category A - Factual",
+      "question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF, as stated in TS 38.300, Version V18.10.0, Clause 4.3.1.1, titled 'NG User Plane'. This interface is part of the NG interface and is used for the non-guaranteed delivery of user plane PDUs between the NG-RAN node and the UPF.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 38.300",
+          "clause_number": "4.3.1.1",
+          "clause_title": "NG User Plane",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (11/11 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2263.13,
+        "gate_ms": 0.01,
+        "generation_ms": 53409.55,
+        "validation_ms": 0.03,
+        "verification_ms": 0.04,
+        "total_ms": 55672.94
+      }
+    },
+    {
+      "id": "G004",
+      "category": "Category A - Factual",
+      "question": "What factors and criteria are considered during UPF selection?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "During UPF selection, the following factors and criteria are considered: S-NSSAI, NF Types of the Data Sources handled by the MFAF, NF Set IDs of the Data Sources handled by the MFAF, and MFAF Serving Area information.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "Factors and criteria considered during UPF selection include: S-NSSAI, NF Types of the Data Sources handled by the MFAF, NF Set IDs of the Data Sources handled by the MFAF, MFAF Serving Area information.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.501",
+          "clause_number": "6.3.21",
+          "clause_title": "MFAF discovery and selection",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (25/29 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2330.52,
+        "gate_ms": 0.01,
+        "generation_ms": 72886.73,
+        "validation_ms": 0.05,
+        "verification_ms": 0.09,
+        "total_ms": 75217.66
+      }
+    },
+    {
+      "id": "G005",
+      "category": "Category A - Factual",
+      "question": "What reference points are defined in the 5G non-roaming reference architecture?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The 5G non-roaming reference architecture defines the following reference points: N1, N2, N3, N4, N6, N9, N5, N7, N8, N10, N11, N12, N13, N14, N15, N16, N16a, N17, N18, N19, N22, N23, N24, N27, N28, N29, N30, N31, and N32.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The reference points defined in the 5G non-roaming reference architecture include N1, N2, N3, N4, N6, N9, N5, N7, N8, N10, N11, N12, N13, N14, N15, N16, N16a, N17, N18, N19, N22, N23, N24, N27, N28, N29, N30, N31, and N32.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.501",
+          "clause_number": "4.2.7",
+          "clause_title": "Reference points",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (36/38 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2276.56,
+        "gate_ms": 0.01,
+        "generation_ms": 122014.1,
+        "validation_ms": 0.02,
+        "verification_ms": 0.15,
+        "total_ms": 124291.07
+      }
+    },
+    {
+      "id": "G006",
+      "category": "Category A - Factual",
+      "question": "What definitions are provided for terms like Closed Control Loop and SLA in service assurance?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The terms 'Closed Control Loop' and 'Service Level Agreement (SLA)' are defined in the 3GPP specification TS 28.535, Version V18.2.0, Clause 4.3 and Clause 4.2.4.1, respectively. The 'Closed Control Loop' is a set of management services that provide the CSP with the capability to assure the communication service as per agreement with a CSC (e.g., enterprise). The 'Service Level Agreement (SLA)' is a specification of the minimum acceptable standard of service. The overall solution and information flows between management services and the closed control loop steps described in Annex C of ETSI GS ZSM 002 [5] are shown in Figure 4.3.1.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The term 'Closed Control Loop' is defined in TS 28.535, Version V18.2.0, Clause 4.3, as a set of management services that provide the CSP with the capability to assure the communication service as per agreement with a CSC (e.g., enterprise). The overall solution and information flows between management services and the closed control loop steps described in Annex C of ETSI GS ZSM 002 [5] are shown in Figure 4.3.1.",
+          "citations": [
+            "E3"
+          ]
+        },
+        {
+          "claim_id": "C2",
+          "text": "The term 'Service Level Agreement (SLA)' is defined in TS 28.535, Version V18.2.0, Clause 4.2.4.1, as a specification of the minimum acceptable standard of service.",
+          "citations": [
+            "E2"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E3",
+          "specification": "TS 28.535",
+          "clause_number": "4.3",
+          "clause_title": "Communication service assurance service",
+          "table_id": null,
+          "table_caption": null
+        },
+        {
+          "evidence_id": "E2",
+          "specification": "TS 28.535",
+          "clause_number": "3.1",
+          "clause_title": "Terms",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E3"
+          ],
+          "reason": "Substantive terminology (50/55 terms) confirmed in cited evidence."
+        },
+        {
+          "claim_id": "C2",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E2"
+          ],
+          "reason": "Substantive terminology (15/22 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2244.75,
+        "gate_ms": 0.01,
+        "generation_ms": 90311.01,
+        "validation_ms": 0.02,
+        "verification_ms": 0.21,
+        "total_ms": 92556.17
+      }
+    },
+    {
+      "id": "G007",
+      "category": "Category A - Factual",
+      "question": "What business-level functional requirements does TS 28.535 define for communication service assurance?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2324.58,
+        "gate_ms": 0.02,
+        "generation_ms": 55478.12,
+        "total_ms": 57802.93
+      }
+    },
+    {
+      "id": "G008",
+      "category": "Category A - Factual",
+      "question": "What transmission numerologies and subcarrier spacings are supported in the NR physical layer?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The NR physical layer supports conventional OFDM for both downlink and uplink transmissions. The downlink transmission waveform uses a Cyclic Prefix, while the uplink transmission waveform employs a conventional OFDM with a transform precoding function that can be enabled or disabled. For shared spectrum channel access in FR1, the uplink transmission waveform subcarrier mapping can map to subcarriers in one or more PRB interlaces.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The downlink transmission waveform is conventional OFDM using a Cyclic Prefix. The uplink transmission waveform is conventional OFDM using a CP with a transform precoding function performing DFT spreading that can be disabled or enabled. For operation with shared spectrum channel access in FR1, the uplink transmission waveform subcarrier mapping can map to subcarriers in one or more PRB interlaces.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 38.300",
+          "clause_number": "5.1",
+          "clause_title": "Waveform, numerology and frame structure",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (50/50 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2268.5,
+        "gate_ms": 0.01,
+        "generation_ms": 106368.14,
+        "validation_ms": 0.02,
+        "verification_ms": 0.08,
+        "total_ms": 108636.92
+      }
+    },
+    {
+      "id": "G009",
+      "category": "Category B - Procedural",
+      "question": "What are the procedural steps for General Registration in the 5G System?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The procedural steps for General Registration in the 5G System are as follows:\n\n1. The UE initiates the Registration procedure using one of the following Registration types: Initial Registration, Mobility Registration Update, Disaster Roaming Initial Registration, Disaster Roaming Mobility Registration Update, SNPN Onboarding Registration, or Emergency Registration.\n\n2. The UE selects the appropriate 5G-GUTI based on the registration type and the PLMN to which it is attempting to register.\n\n3. The UE provides the necessary information in the Registration Request message, including the Registration type, 5G-GUTI, and any additional GUTIs as specified in the Registration Request message.\n\n4. The AMF includes the 5G-GUTI in the Registration Accept message, indicating that the Registration Request has been accepted.\n\n5. The UE removes any internal resources related to the PDU Sessions that are not marked as established in the received PDU Session status.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The procedural steps for General Registration in the 5G System are as follows:",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.502",
+          "clause_number": "4.2.2.2.2",
+          "clause_title": "General Registration",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (7/10 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2293.55,
+        "gate_ms": 0.01,
+        "generation_ms": 113856.2,
+        "validation_ms": 0.03,
+        "verification_ms": 0.12,
+        "total_ms": 116150.19
+      }
+    },
+    {
+      "id": "G010",
+      "category": "Category B - Procedural",
+      "question": "How is the UE-requested PDU Session Establishment procedure executed in non-roaming and roaming with local breakout?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "In the non-roaming and roaming with local breakout scenario, the UE initiates the PDU Session Establishment procedure by sending a PDU Session Establishment Request message to the AMF. This message is then forwarded to the N3IWF via the IPsec SA for NAS signalling, as specified in clause 4.12.5 of TS 23.502. The N3IWF, in turn, forwards the message to the AMF in the 5GC, which is responsible for establishing the access resources for the PDU Session.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The UE-requested PDU Session Establishment procedure involves the UE sending a PDU Session Establishment Request message to the AMF, which is then forwarded to the N3IWF via the IPsec SA for NAS signalling.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.502",
+          "clause_number": "4.3.2.2.1",
+          "clause_title": "Non-roaming and Roaming with Local Breakout",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (17/26 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2323.49,
+        "gate_ms": 0.02,
+        "generation_ms": 116760.11,
+        "validation_ms": 0.11,
+        "verification_ms": 0.22,
+        "total_ms": 119087.02
+      }
+    },
+    {
+      "id": "G011",
+      "category": "Category B - Procedural",
+      "question": "What are the preparation and execution phases of Intra-NR RAN Handover?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "LLM generation failed: timed out",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2269.22,
+        "gate_ms": 0.01,
+        "generation_ms": 122066.3,
+        "total_ms": 124335.68
+      }
+    },
+    {
+      "id": "G012",
+      "category": "Category B - Procedural",
+      "question": "What actions does the UE take when an initial registration is accepted by the network?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "When an initial registration is accepted by the network, the UE aborts the initial registration procedure, sets the 5GS update status to 5U2 NOT UPDATED, and enters state 5GMM-DEREGISTERED. Additionally, the UE resets the registration attempt counter.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The UE aborts the initial registration procedure, sets the 5GS update status to 5U2 NOT UPDATED, and enters state 5GMM-DEREGISTERED. Additionally, the UE resets the registration attempt counter.",
+          "citations": [
+            "E3"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E3",
+          "specification": "TS 24.501",
+          "clause_number": "5.5.1.2.5",
+          "clause_title": "Initial registration not accepted by the network",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E3"
+          ],
+          "reason": "Substantive terminology (21/22 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2299.13,
+        "gate_ms": 0.01,
+        "generation_ms": 100813.86,
+        "validation_ms": 0.02,
+        "verification_ms": 0.09,
+        "total_ms": 103113.31
+      }
+    },
+    {
+      "id": "G013",
+      "category": "Category B - Procedural",
+      "question": "What general requirements apply to registration management procedures in 5GS?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "LLM generation failed: timed out",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2233.84,
+        "gate_ms": 0.01,
+        "generation_ms": 122055.77,
+        "total_ms": 124289.78
+      }
+    },
+    {
+      "id": "G014",
+      "category": "Category B - Procedural",
+      "question": "What requirements govern the establishment and handling of 5G NAS security contexts?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "LLM generation failed: timed out",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2298.45,
+        "gate_ms": 0.01,
+        "generation_ms": 122061.53,
+        "total_ms": 124360.14
+      }
+    },
+    {
+      "id": "G015",
+      "category": "Category C - Table",
+      "question": "What attributes of a PDU Session are defined in the overview table of data transport and session management?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The overview table of data transport and session management in TS 23.501, version V18.12.0, clause 5.6.1, lists the following attributes of a PDU Session: S-NSSAI of the HPLMN, S-NSSAI of the Serving PLMN, DNN (Data Network Name), PDU Session Type, SSC mode, and PDU Session Id.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The overview table of data transport and session management defines the following attributes of a PDU Session: S-NSSAI of the HPLMN, S-NSSAI of the Serving PLMN, DNN (Data Network Name), PDU Session Type, SSC mode, and PDU Session Id.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.501",
+          "clause_number": "5.6.1",
+          "clause_title": "Overview",
+          "table_id": "TS23501-T001",
+          "table_caption": "Table 5.6.1-1: Attributes of a PDU Session"
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (28/32 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2403.48,
+        "gate_ms": 0.01,
+        "generation_ms": 120403.37,
+        "validation_ms": 0.03,
+        "verification_ms": 0.15,
+        "total_ms": 122807.33
+      }
+    },
+    {
+      "id": "G016",
+      "category": "Category C - Table",
+      "question": "What standardized 5QI characteristics and QoS packet delay budgets are defined in Table 5.7.1.3-1?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2333.17,
+        "gate_ms": 0.01,
+        "generation_ms": 63605.37,
+        "total_ms": 65938.73
+      }
+    },
+    {
+      "id": "G017",
+      "category": "Category C - Table",
+      "question": "What behavior is specified in the table for change of UE usage setting in single-registration mode?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The behavior specified in the table for change of UE usage setting in single-registration mode is to disable the N1 mode capability for 3GPP access (see subclause 4.9.2) and non-3GPP access (see subclause 4.9.3), if the UE is registered over both 3GPP access and non-3GPP access.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The behavior specified in the table for change of UE usage setting in single-registration mode is to disable the N1 mode capability for 3GPP access (see subclause 4.9.2) and non-3GPP access (see subclause 4.9.3), if the UE is registered over both 3GPP access and non-3GPP access.",
+          "citations": [
+            "E2"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E2",
+          "specification": "TS 24.501",
+          "clause_number": "4.3.3",
+          "clause_title": "Change of UE's usage setting",
+          "table_id": "TS24501-T001",
+          "table_caption": "Table\u00a04.3.3.1: Change of UE's usage setting for a UE in single-registration mode"
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E2"
+          ],
+          "reason": "Substantive terminology (36/38 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2365.98,
+        "gate_ms": 0.02,
+        "generation_ms": 61936.04,
+        "validation_ms": 0.03,
+        "verification_ms": 0.13,
+        "total_ms": 64302.43
+      }
+    },
+    {
+      "id": "G018",
+      "category": "Category C - Table",
+      "question": "What information elements and message contents are specified in the AUTHENTICATION REQUEST table?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "The AUTHENTICATION REQUEST table specifies the following information elements and their message contents:\n\n- Extended protocol discriminator: Presence: M, Format: V, Length: 1\n- Security header type: Presence: M, Format: V, Length: 1/2\n- Spare half octet: Presence: M, Format: V, Length: 1/2\n- Authentication request message identity: Presence: M, Format: V, Length: 1\n- ngKSI: Presence: M, Format: V, Length: 1/2\n- Spare half octet: Presence: M, Format: V, Length: 1/2\n- ABBA: Presence: O, Format: LV, Length: 3-n\n- Authentication parameter RAND (5G authentication challenge): Presence: O, Format: TV, Length: 17\n- Authentication parameter AUTN (5G authentication challenge): Presence: O, Format: TLV, Length: 18\n- EAP message: Presence: O, Format: TLV-E, Length: 7-1503\n",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "The AUTHENTICATION REQUEST table specifies the following information elements and their message contents:",
+          "citations": [
+            "E2",
+            "E3",
+            "E4"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E2",
+          "specification": "TS 24.501",
+          "clause_number": "8.2.1.1",
+          "clause_title": "Message definition",
+          "table_id": "TS24501-T011",
+          "table_caption": "Table\u00a08.2.1.1.1: AUTHENTICATION REQUEST message content"
+        },
+        {
+          "evidence_id": "E3",
+          "specification": "TS 24.501",
+          "clause_number": "8.2.1.1",
+          "clause_title": "Message definition",
+          "table_id": null,
+          "table_caption": null
+        },
+        {
+          "evidence_id": "E4",
+          "specification": "TS 24.501",
+          "clause_number": "8.2.2.1",
+          "clause_title": "Message definition",
+          "table_id": "TS24501-T012",
+          "table_caption": "Table\u00a08.2.2.1.1: AUTHENTICATION RESPONSE message content"
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E2",
+            "E3",
+            "E4"
+          ],
+          "reason": "Substantive terminology (7/10 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2350.52,
+        "gate_ms": 0.01,
+        "generation_ms": 76668.8,
+        "validation_ms": 0.03,
+        "verification_ms": 0.11,
+        "total_ms": 79019.64
+      }
+    },
+    {
+      "id": "G019",
+      "category": "Category D - Multi-Clause",
+      "question": "What does TS 28.535 specify about closed control loops and their governance?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "TS 28.535 specifies that closed control loops are managed through lifecycle management, goal configuration, and governance capabilities. Lifecycle management includes creating, modifying, activating/deactivating, and deleting closed control loops. Goal configuration allows for the setting of goals for closed control loops. Governance capabilities, such as closed control loop governance and closed control loop monitoring, enable the management of closed control loops by the MnS consumer.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "TS 28.535 specifies that closed control loops are managed through lifecycle management, goal configuration, and governance capabilities.",
+          "citations": [
+            "E2",
+            "E3",
+            "E4"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E2",
+          "specification": "TS 28.535",
+          "clause_number": "4.2.5.2",
+          "clause_title": "Closed control loop governance",
+          "table_id": null,
+          "table_caption": null
+        },
+        {
+          "evidence_id": "E3",
+          "specification": "TS 28.535",
+          "clause_number": "4.2.5.1",
+          "clause_title": "Overview",
+          "table_id": null,
+          "table_caption": null
+        },
+        {
+          "evidence_id": "E4",
+          "specification": "TS 28.535",
+          "clause_number": "4.2.6",
+          "clause_title": "Coordination between closed control loops",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E2",
+            "E3",
+            "E4"
+          ],
+          "reason": "Substantive terminology (13/15 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2379.57,
+        "gate_ms": 0.01,
+        "generation_ms": 63051.78,
+        "validation_ms": 0.03,
+        "verification_ms": 0.09,
+        "total_ms": 65431.69
+      }
+    },
+    {
+      "id": "G020",
+      "category": "Category D - Multi-Clause",
+      "question": "How are NG-RAN architecture and NG interface protocols structured across user plane and control plane in TS 38.300?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "TS 38.300 provides an overview and overall description of the NG-RAN architecture, focusing on the radio interface protocol architecture of NR connected to 5GC. The document specifies the NG-RAN architecture across the user plane and control plane, including the NG-U interface and NG-C interface. The NG-RAN architecture is illustrated in Figure 4.1-1, and the NG-C interface is further detailed in TS 38.410 [16].",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "TS 38.300 specifies the NG-RAN architecture and protocols across the user plane and control plane, including the NG-U interface and NG-C interface.",
+          "citations": [
+            "E4",
+            "E5"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E4",
+          "specification": "TS 38.300",
+          "clause_number": "4.1",
+          "clause_title": "Overall Architecture",
+          "table_id": null,
+          "table_caption": null
+        },
+        {
+          "evidence_id": "E5",
+          "specification": "TS 38.300",
+          "clause_number": "1",
+          "clause_title": "Scope",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E4",
+            "E5"
+          ],
+          "reason": "Substantive terminology (13/16 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2561.75,
+        "gate_ms": 0.02,
+        "generation_ms": 47100.88,
+        "validation_ms": 0.02,
+        "verification_ms": 0.06,
+        "total_ms": 49662.91
+      }
+    },
+    {
+      "id": "G021",
+      "category": "Category D - Multi-Clause",
+      "question": "How do AMF and UPF functional responsibilities complement each other in the 5G Core architecture?",
+      "expected_behavior": "answer",
+      "actual_status": "answered",
+      "behavior_correct": false,
+      "answer": "AMF and UPF complement each other in the 5G Core architecture by separating the User Plane (UP) functions from the Control Plane (CP) functions, allowing independent scalability, evolution, and flexible deployments. The AMF is responsible for handling the Control Plane functions, while the UPF is responsible for handling the User Plane functions. This separation enables each component to be independently scalable, evolve, and be deployed flexibly, enhancing the overall flexibility and adaptability of the 5G Core architecture.",
+      "abstention_reason": null,
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "AMF and UPF complement each other in the 5G Core architecture by separating the User Plane (UP) functions from the Control Plane (CP) functions, allowing independent scalability, evolution, and flexible deployments.",
+          "citations": [
+            "E1"
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "evidence_id": "E1",
+          "specification": "TS 23.501",
+          "clause_number": "4.2.2",
+          "clause_title": "Network Functions and entities",
+          "table_id": null,
+          "table_caption": null
+        }
+      ],
+      "claim_verifications": [
+        {
+          "claim_id": "C1",
+          "verdict": "SUPPORTED",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Substantive terminology (15/25 terms) confirmed in cited evidence."
+        }
+      ],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2336.19,
+        "gate_ms": 0.01,
+        "generation_ms": 89102.53,
+        "validation_ms": 0.02,
+        "verification_ms": 0.15,
+        "total_ms": 91439.13
+      }
+    },
+    {
+      "id": "G022",
+      "category": "Category D - Multi-Clause",
+      "question": "What are the rules for establishment of 5G NAS security contexts and the handling of security keys?",
+      "expected_behavior": "answer",
+      "actual_status": "abstain",
+      "behavior_correct": false,
+      "answer": null,
+      "abstention_reason": "LLM generation failed: timed out",
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2336.75,
+        "gate_ms": 0.02,
+        "generation_ms": 122080.58,
+        "total_ms": 124417.55
+      }
+    },
+    {
+      "id": "G023",
+      "category": "Category E - Unanswerable In-Corpus",
+      "question": "What is the exact battery life specification in hours for 5G RedCap devices in TS 38.300?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2314.04,
+        "gate_ms": 0.01,
+        "generation_ms": 63878.34,
+        "total_ms": 66192.57
+      }
+    },
+    {
+      "id": "G024",
+      "category": "Category E - Unanswerable In-Corpus",
+      "question": "What is the pricing model in USD for network slice instances defined in TS 28.535?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2268.63,
+        "gate_ms": 0.01,
+        "generation_ms": 53421.56,
+        "total_ms": 55690.38
+      }
+    },
+    {
+      "id": "G025",
+      "category": "Category E - Unanswerable In-Corpus",
+      "question": "What is the minimum physical CPU clock frequency required to execute the AMF binary in TS 23.501?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2495.28,
+        "gate_ms": 0.01,
+        "generation_ms": 46794.64,
+        "total_ms": 49290.12
+      }
+    },
+    {
+      "id": "G026",
+      "category": "Category E - Unanswerable In-Corpus",
+      "question": "What is the exact microwave oven interference tolerance threshold for gNB antennas in TS 38.300?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2321.0,
+        "gate_ms": 0.01,
+        "generation_ms": 57620.78,
+        "total_ms": 59941.92
+      }
+    },
+    {
+      "id": "G027",
+      "category": "Category F - Out-of-Corpus",
+      "question": "What are the quantum key distribution (QKD) key exchange formulas specified in IEEE 802.11ax?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2323.33,
+        "gate_ms": 0.02,
+        "generation_ms": 986674.81,
+        "total_ms": 988998.39
+      }
+    },
+    {
+      "id": "G028",
+      "category": "Category F - Out-of-Corpus",
+      "question": "How does Kubernetes implement the Container Network Interface (CNI) plugin according to the Cloud Native Computing Foundation?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 3970.85,
+        "gate_ms": 0.01,
+        "generation_ms": 85785.23,
+        "total_ms": 89756.32
+      }
+    },
+    {
+      "id": "G029",
+      "category": "Category G - Adversarial / False Premise",
+      "question": "How does the Access and Mobility Management Function (AMF) perform user plane packet routing and N6 encapsulation directly to the internet?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2286.53,
+        "gate_ms": 0.01,
+        "generation_ms": 51534.66,
+        "total_ms": 53821.33
+      }
+    },
+    {
+      "id": "G030",
+      "category": "Category G - Adversarial / False Premise",
+      "question": "What is the standardized 5QI value for 7G holographic teleportation defined in Table 5.7.1.3-1 of TS 23.501?",
+      "expected_behavior": "abstain",
+      "actual_status": "abstain",
+      "behavior_correct": true,
+      "answer": null,
+      "abstention_reason": null,
+      "claims": [],
+      "citations": [],
+      "claim_verifications": [],
+      "citation_valid": true,
+      "citation_errors": [],
+      "gate_passed": true,
+      "gate_reason": null,
+      "latency_breakdown": {
+        "retrieval_ms": 2458.6,
+        "gate_ms": 0.01,
+        "generation_ms": 45263.64,
+        "total_ms": 47722.63
+      }
+    }
+  ]
+}

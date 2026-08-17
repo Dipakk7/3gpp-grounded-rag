@@ -1,0 +1,89 @@
+[
+  {
+    "id": "QA-1",
+    "name": "Factual Question",
+    "http_status": 200,
+    "rag_status": "answered",
+    "citations_count": 1,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-2",
+    "name": "Procedural Question",
+    "http_status": 200,
+    "rag_status": "abstain",
+    "citations_count": 0,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-3",
+    "name": "Table Question",
+    "http_status": 200,
+    "rag_status": "answered",
+    "citations_count": 1,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-4",
+    "name": "Multi-Clause Question",
+    "http_status": 200,
+    "rag_status": "answered",
+    "citations_count": 3,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-5",
+    "name": "In-Corpus Unanswerable Question",
+    "http_status": 200,
+    "rag_status": "abstain",
+    "citations_count": 0,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-6",
+    "name": "Out-of-Corpus Question",
+    "http_status": 200,
+    "rag_status": "abstain",
+    "citations_count": 0,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-7",
+    "name": "Adversarial / False-Premise Question",
+    "http_status": 200,
+    "rag_status": "abstain",
+    "citations_count": 0,
+    "evidence_count": 5,
+    "passed": true
+  },
+  {
+    "id": "QA-8a",
+    "name": "Invalid Request - Empty Question",
+    "http_status": 422,
+    "passed": true
+  },
+  {
+    "id": "QA-8b",
+    "name": "Invalid Request - Missing Question Field",
+    "http_status": 422,
+    "passed": true
+  },
+  {
+    "id": "QA-8c",
+    "name": "Invalid Request - Negative top_k",
+    "http_status": 422,
+    "passed": true
+  },
+  {
+    "id": "QA-8d",
+    "name": "Invalid Request - Wrong Type",
+    "http_status": 422,
+    "passed": true
+  }
+]

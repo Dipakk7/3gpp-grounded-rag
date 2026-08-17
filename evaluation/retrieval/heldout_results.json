@@ -1,0 +1,137 @@
+{
+  "summary": {
+    "hit@1": 0.5,
+    "hit@3": 0.8333333333333334,
+    "hit@5": 0.8333333333333334,
+    "category_counts": {
+      "Definition / Terminology": {
+        "hit5": 1,
+        "total": 2
+      },
+      "Procedural / Step-by-Step": {
+        "hit5": 2,
+        "total": 2
+      },
+      "Description / Overview": {
+        "hit5": 2,
+        "total": 2
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "H001",
+      "category": "Definition / Terminology",
+      "question": "What definitions are specified for Network Slice and PDU Session in 5G system architecture?",
+      "expected_spec": "TS 23.501",
+      "expected_clause": "3.1",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": 9,
+      "bm25_rank": 8,
+      "hybrid_rank": 2,
+      "source_docx": "23501-ic0.docx",
+      "heading": "3.1 Definitions",
+      "reason": "TS 23.501 Clause 3.1 defines architectural terms including Network Slice and PDU Session."
+    },
+    {
+      "id": "H002",
+      "category": "Definition / Terminology",
+      "question": "What definitions are provided for gNB and ng-eNB nodes in the NG-RAN overall architecture?",
+      "expected_spec": "TS 38.300",
+      "expected_clause": "3.2",
+      "first_relevant_rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": null,
+      "bm25_rank": 3,
+      "hybrid_rank": null,
+      "source_docx": "38300-ia0.docx",
+      "heading": "3.2 Definitions",
+      "reason": "TS 38.300 Clause 3.2 defines NG-RAN node types including gNB and ng-eNB."
+    },
+    {
+      "id": "H003",
+      "category": "Procedural / Step-by-Step",
+      "question": "What are the procedural steps for UE-initiated Deregistration in the 5G System?",
+      "expected_spec": "TS 23.502",
+      "expected_clause": "4.2.2.3.2",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": 3,
+      "bm25_rank": 1,
+      "hybrid_rank": 1,
+      "source_docx": "23502-ie0.docx",
+      "heading": "4.2.2.3.2 UE-initiated Deregistration",
+      "reason": "TS 23.502 Clause 4.2.2.3.2 specifies the call flow steps 1 to 5 for UE-initiated deregistration."
+    },
+    {
+      "id": "H004",
+      "category": "Procedural / Step-by-Step",
+      "question": "What procedural steps are executed during a UE Triggered Service Request in the 5G System?",
+      "expected_spec": "TS 23.502",
+      "expected_clause": "4.2.3.2",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": 2,
+      "bm25_rank": 13,
+      "hybrid_rank": 1,
+      "source_docx": "23502-ie0.docx",
+      "heading": "4.2.3.2 UE Triggered Service Request",
+      "reason": "TS 23.502 Clause 4.2.3.2 defines the procedure steps 1 to 22 for UE-triggered service requests."
+    },
+    {
+      "id": "H005",
+      "category": "Description / Overview",
+      "question": "How are the 5GS Registration Management states described and modeled for the UE and AMF?",
+      "expected_spec": "TS 23.501",
+      "expected_clause": "5.3.2.2",
+      "first_relevant_rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": 1,
+      "bm25_rank": 6,
+      "hybrid_rank": 2,
+      "source_docx": "23501-ic0.docx",
+      "heading": "5.3.2.2 5GS Registration Management states",
+      "reason": "TS 23.501 Clause 5.3.2.2 provides the architectural description and state models for RM-DEREGISTERED and RM-REGISTERED."
+    },
+    {
+      "id": "H006",
+      "category": "Description / Overview",
+      "question": "How is the Layer 2 protocol stack overview and functional structure described in NR?",
+      "expected_spec": "TS 38.300",
+      "expected_clause": "6.1",
+      "first_relevant_rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "routed": false,
+      "detected_specs": [],
+      "dense_rank": 1,
+      "bm25_rank": 2,
+      "hybrid_rank": 1,
+      "source_docx": "38300-ia0.docx",
+      "heading": "6.1 Overview",
+      "reason": "TS 38.300 Clause 6.1 describes the Layer 2 architecture overview covering SDAP, PDCP, RLC, and MAC."
+    }
+  ]
+}

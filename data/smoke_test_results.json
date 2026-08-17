@@ -1,0 +1,7 @@
+{
+  "Factual": "WARN (got abstain, expected answer)",
+  "Table": "WARN (got answered, expected answer)",
+  "Procedural": "WARN (got abstain, expected answer)",
+  "Unanswerable": "PASS",
+  "Adversarial": "PASS"
+}

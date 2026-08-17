@@ -1,0 +1,39 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+*.pem
+*.key
+
+# Vector Database (Local Chroma SQLite & Binaries)
+data/vectorstore/
+*.sqlite3
+*.db
+
+# Logs and temporary files
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# IDE & Editor state
+.idea/
+.vscode/
+*.swp
+
+
