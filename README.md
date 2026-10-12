@@ -1,330 +1,249 @@
+<div align="center">
+
 # 3GPP-Grounded-RAG
 
-A production-grade, citation-grounded Retrieval-Augmented Generation (RAG) system for 3GPP 5G Technical Specifications. Built for mission-critical telecommunications question answering, it enforces deterministic citation validation, token-level claim support verification, and strict safe abstention against hallucinations.
+**Citation-grounded RAG for 3GPP 5G specifications, with deterministic claim verification and safe abstention.**
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com/)
 [![ChromaDB](https://img.shields.io/badge/VectorStore-ChromaDB-FF6F00.svg)](https://www.trychroma.com/)
-[![Ollama](https://img.shields.io/badge/Embeddings%20%26%20LLM-Ollama-000000.svg)](https://ollama.ai/)
+[![Ollama](https://img.shields.io/badge/LLM%20%26%20Embeddings-Ollama-000000.svg)](https://ollama.ai/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![Tests](https://img.shields.io/badge/Tests-90%2F90%20PASS-brightgreen.svg)](tests/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+[Demo](#-demo) · [Results](#-results) · [Architecture](#-architecture) · [Quickstart](#-quickstart) · [API](#-api) · [Limitations](#-limitations--failure-analysis)
+
+<!-- TODO: add docs/assets/demo.gif (record the Streamlit UI answering + abstaining) -->
+<img src="docs/assets/demo.gif" alt="Demo of 3GPP-Grounded-RAG" width="800"/>
+
+</div>
 
 ---
 
-## 1. Problem Statement & Motivation
+## TL;DR
 
-Telecommunications engineering operates on authoritative technical specifications published by the 3rd Generation Partnership Project (3GPP). These documents span thousands of pages of dense, interconnected systems architecture, procedural call flows, and protocol definitions.
-
-Standard off-the-shelf RAG systems fail when applied to 3GPP specifications due to four domain-specific challenges:
-
-1. **Destructive Chunking**: Fixed-size token chunking fragments nested hierarchical clauses (e.g., `§4.2.8.0`) and tabular protocol parameters across chunk boundaries, stripping crucial section headers and context.
-2. **Lexical & Identifier Blindness**: Standard NLP tokenizers split technical acronyms, hyphenated identifiers, and dotted clause numbers (such as `5G-GUTI`, `Npcf_SMPolicyControl`, `TS 23.501 §4.2.2.2.2`, `5QI`), causing semantic search to miss exact technical targets.
-3. **Specification Dominance / Dilution**: Large architectural specifications (such as TS 23.501 and TS 23.502 with thousands of paragraphs) drown out smaller, domain-specific standards (such as TS 28.535 with 86 chunks) during global dense retrieval.
-4. **Catastrophic Hallucinations**: In telecommunications standards, generating a plausible-sounding but unverified parameter, timer, or procedure step can lead to critical implementation faults. Systems must verify claims against authoritative text and safely abstain when evidence is missing.
-
-**3GPP-Grounded-RAG** solves these challenges with a clause-aware hierarchical ingestion pipeline, hybrid reciprocal rank fusion retrieval with specification-aware routing, structural metadata refinement, and deterministic claim-support verification gates.
+- Fully **local and private**: Ollama (`qwen2.5:1.5b`, `nomic-embed-text`) + ChromaDB, no external APIs.
+- **Clause-aware ingestion** of 5 Release 18 specs → **6,737 chunks** with hierarchical breadcrumbs and Markdown tables.
+- **Hybrid retrieval** (dense + telecom-tuned BM25 + RRF) with **specification-aware routing** and **structural re-ranking**: **Hit@5 = 100%** (21 queries), **MRR 0.80**.
+- **Three verification gates** (evidence sufficiency, citation validation, claim support) → **0 unsupported claims** and **8/8 correct abstentions** on the evaluation set.
+- Production-style packaging: FastAPI, Pydantic v2, Streamlit UI, **90 automated tests**.
 
 ---
 
-## 2. Key Results & Benchmark Summary
+## Why this exists
 
-| Evaluation Component | Benchmark Metric | Verified Result | Notes |
-| :--- | :--- | :--- | :--- |
-| **Authoritative Retrieval (21Q)** | **Hit@5 Recall** | **100.0% (21/21)** | Dense + BM25 via Reciprocal Rank Fusion |
-| | **Hit@3 Recall** | **90.5% (19/21)** | High precision in top ranks |
-| | **Hit@1 Recall** | **66.7% (14/21)** | Exact target clause at rank #1 |
-| | **Mean Reciprocal Rank (MRR)** | **0.7992** | Multi-retriever hybrid baseline: 0.7251 |
-| **Held-Out Generalization (6Q)** | **Hit@5 Recall** | **83.3% (5/6)** | Evaluated on unseen procedural and definition questions |
-| | **Hit@3 Recall** | **83.3% (5/6)** | Unseen specifications & multi-step flows |
-| | **Hit@1 Recall** | **50.0% (3/6)** | Exact target clause at rank #1 |
-| **Grounded Generation (30Q)** | **Citation Validity Rate** | **100.0% (20/20)** | Validated against retrieved evidence IDs |
-| | **Citation Completeness Rate** | **100.0%** | Specification, clause number, and title included |
-| | **Claim Support Rate** | **100.0% (15/15)** | Token-level containment against source text |
-| | **Unsupported Claim Rate** | **0.0% (0/15 claims)** | **0.0% across evaluated 30-query test benchmark (empirical result on evaluated test set, not a universal guarantee)** |
-| | **Abstention Accuracy** | **100.0% (8/8)** | Safely abstains on adversarial/unanswerable queries |
-| | **False Answer Rate** | **0.0% (0/8)** | Zero speculative answers on ungrounded queries |
-| | **Answer Correctness (Answerable)** | **63.64% (14/22)** | Strict factual accuracy with local Qwen2.5:1.5b |
-| **Automated Test Suite** | **Pytest Unit & Integration** | **90/90 PASS (100%)** | End-to-end API, chunking, retrieval, generation |
-| **Knowledge Corpus** | **Vector Store & Inverted Index** | **6,737 / 6,737** | 5 Release 18 specifications fully indexed |
+Telecom engineers work from 3GPP specs spanning thousands of dense pages. A wrong timer value or procedure step can cause real implementation faults, so "plausible" is not good enough. Off-the-shelf RAG fails here for four reasons:
 
----
-
-## 3. System Architecture
-
-The end-to-end pipeline routes questions through multiple deterministic validation stages before producing citations or triggering safe abstention:
-
-```
-                         [ User Technical Query ]
-                                    │
-                                    ▼
-                   [ Specification-Aware Router ]
-                    (Explicit & implicit keyword regex)
-                                    │
-            ┌───────────────────────┼───────────────────────┐
-            ▼                       ▼                       ▼
-   [ Dense Semantic Search ]   [ Telecom BM25 ]   [ Target Spec Filter ]
-   (nomic-embed-text: 768d)    (Regex Tokenizer)            │
-            │                       │                       │
-            └───────────┬───────────┘                       │
-                        ▼                                   │
-          [ Reciprocal Rank Fusion (RRF) ]                  │
-          (Rank-merging: k=60, w_dense=0.6)                 │
-                        │                                   │
-                        ▼                                   ▼
-          [ Structural Metadata Refiner ] ◄─────────────────┘
-          (Title match, Definition §3, Procedure §4 boosts)
-                        │
-                        ▼
-             [ Evidence Sufficiency Gate ]
-                        │
-           ┌────────────┴────────────┐
-           │ Passes Gate             │ Insufficient Evidence
-           ▼                         ▼
-   [ Structured Generator ]   [ Safe Abstention Policy Engine ]
-     (Qwen2.5:1.5b @ T=0.0)          │
-           │                         │
-           ▼                         │
-   [ Citation Validator ]            │
-   (Spec, clause, title check)       │
-           │                         │
-           ▼                         │
-   [ Claim-Support Verifier ]        │
-   (Token & n-gram containment)      │
-           │                         │
-           ├─────────────────────────┘
-           │
-     ┌─────┴──────────────┐
-     ▼                    ▼
-[ Grounded Answer ]  [ Safe Abstention ]
-```
-
----
-
-## 4. Document Ingestion Pipeline
-
-### Technical Specifications Indexed
-The system indexes 5 foundational 3GPP Release 18 technical specifications extracted directly from official Word (`.docx`) publications:
-
-| Specification | Version | Title | Total Paragraphs | Clauses | Prose Chunks | Table Chunks | Total Chunks |
-| :--- | :--- | :--- | ---: | ---: | ---: | ---: | ---: |
-| **TS 23.501** | `V18.12.0` | System Architecture for the 5G System (5GS) | 16,878 | 816 | 1,382 | 55 | 1,437 |
-| **TS 23.502** | `V18.14.0` | Procedures for the 5G System (5GS) | 17,998 | 946 | 1,659 | 60 | 1,719 |
-| **TS 24.501** | `V18.13.0` | Non-Access-Stratum (NAS) protocol for 5GS | 9,807 | 1,075 | 2,426 | 542 | 2,968 |
-| **TS 28.535** | `V18.2.0` | Management & orchestration; Closed control loop assurance | 599 | 32 | 38 | 1 | 39 |
-| **TS 38.300** | `V18.10.0` | NR; NR and NG-RAN Overall Description | 3,562 | 425 | 559 | 15 | 574 |
-| **Total** | | | **48,844** | **3,294** | **6,064** | **673** | **6,737** |
-
-### Ingestion Engineering Highlights
-- **Hierarchical Clause Extraction**: Detects clause numbering across all heading levels (`Heading 1` to `Heading 6`, `Heading 8`, `ANNEX`) and builds persistent breadcrumb trails (e.g. `4 > 4.2 > 4.2.8 > 4.2.8.0`).
-- **Table Preservation**: Extracts 673 technical tables, converting them to clean, column-aligned Markdown while skipping non-technical cover/layout tables.
-- **TOC & Boilerplate Stripping**: Removes 4,325 Table of Contents paragraphs, dynamic page-number fields, running headers/footers, and legal notices to prevent index contamination.
-- **Semantic Boundary Chunking**: Clauses larger than 2,000 characters are split strictly along paragraph boundaries, prepending clause identifiers and breadcrumbs to every sub-chunk.
-
----
-
-## 5. Retrieval & Re-Ranking Methodology
-
-### 1. Dense Semantic Vector Search
-- **Embedding Model**: `nomic-embed-text:latest` via local Ollama.
-- **Vector Dimension**: 768-dimensional float embeddings.
-- **Vector Store**: ChromaDB persistent collection (`telecom_3gpp_knowledge`) using HNSW cosine space.
-
-### 2. Telecom-Tailored Lexical Search (BM25)
-- Custom Okapi BM25 implementation ($k_1=1.5$, $b=0.75$).
-- **Telecom Regex Tokenizer**: `[a-z0-9]+(?:[\.\-_][a-z0-9]+)*` preserves dotted numbers (`4.2.8.0`), hyphenated identifiers (`5G-GUTI`, `S-NSSAI`), interface identifiers (`NG-U`, `N2`, `N4`), and acronyms (`AMF`, `UPF`, `SMF`, `5QI`).
-
-### 3. Reciprocal Rank Fusion (RRF)
-Combines candidate rankings from dense and lexical retrieval:
-$$\text{RRF\_Score}(d) = \sum_{m \in \{\text{dense}, \text{bm25}\}} w_m \cdot \frac{1}{k + \text{rank}_m(d)}$$
-where $k=60$, $w_{\text{dense}}=0.6$, and $w_{\text{bm25}}=0.4$.
-
-### 4. Specification-Aware Routing
-- Detects explicit target specifications (e.g., `"in TS 28.535"`) and technical domain keywords (`"Closed control loop"` $\rightarrow$ TS 28.535, `"NG-RAN"` $\rightarrow$ TS 38.300, `"NAS"` $\rightarrow$ TS 24.501).
-- Directs search candidate pools to relevant specifications, preventing smaller specifications from being overwhelmed by broader documents.
-
-### 5. Structural Metadata-Aware Re-Ranking
-Evaluates candidate chunks using document structure signals:
-- **Candidate Pool Expansion**: Evaluates $4 \times \text{top\_k}$ candidates (minimum 30 candidates).
-- **Clause Title Match (1.30x)**: Boosts chunks whose clause title tokens match key query keywords.
-- **Definition Intent (1.45x)**: Prioritizes Clause 3 / 3.1 ("Definitions") for terminology inquiries.
-- **Procedure Intent (1.35x)**: Boosts Stage-2 procedural sections in TS 23.502 for workflow questions.
-- **Description Intent (1.25x)**: Prioritizes architectural overview sections for broad functional questions.
-
----
-
-## 6. Grounded Generation, Verification & Safe Abstention
-
-### Constrained Generator (Qwen2.5:1.5b)
-- Uses local Ollama model `qwen2.5:1.5b` executed at temperature `0.0`.
-- Prompts enforce strict JSON output mapping atomic statements to numbered evidence IDs (`E1`, `E2`, ...).
-
-### Multi-Gate Grounding Verification
-1. **Citation Validation Gate**: Validates that all cited evidence IDs exist in the retrieved prompt context and verifies specification name, clause number, and clause title.
-2. **Deterministic Claim-Support Verifier**: Compares substantive n-grams and technical terminology in each claim against the cited evidence chunk.
-3. **Safe Abstention Policy Engine**: Replaces ungrounded generation with a clean abstention (`status: "abstain"`, `answer: null`) under any of these conditions:
-   - Retrieval returns zero evidence or insufficient relevance scores.
-   - The query addresses out-of-scope topics (e.g. IEEE 802.11, Kubernetes).
-   - The query contains adversarial or nonexistent premises (e.g. "7G holographic teleportation").
-   - Evidence does not substantiate the claims made by the model.
-
----
-
-## 7. Technology Stack
-
-| Layer | Technology | Purpose |
+| Problem | Why generic RAG breaks | What this project does |
 | :--- | :--- | :--- |
-| **Language & Runtime** | Python 3.10–3.13 | Core runtime environment |
-| **API Framework** | FastAPI, Uvicorn, Pydantic v2 | High-throughput asynchronous REST API |
-| **Vector Store** | ChromaDB (HNSW Persistent) | Local persistent vector indexing and filtering |
-| **Embeddings & LLM** | Ollama (`nomic-embed-text`, `qwen2.5:1.5b`) | Offline, private local inference |
-| **Document Processing** | `python-docx` | Extraction of DOCX styles, tables, and XML elements |
-| **Web UI** | Streamlit | Interactive engineer-facing demonstration interface |
-| **Testing & Quality** | Pytest, pytest-cov | Automated test execution and regression prevention |
+| **Destructive chunking** | Fixed-size chunks split clauses like `§4.2.8.0` and tables, losing headers | Clause-aware chunking with breadcrumbs (`4 > 4.2 > 4.2.8 > 4.2.8.0`) and table preservation |
+| **Identifier blindness** | Tokenizers split `5G-GUTI`, `Npcf_SMPolicyControl`, `4.2.8.0` | Custom BM25 regex tokenizer that keeps technical identifiers intact |
+| **Specification dominance** | Big specs (TS 23.501/23.502) drown out small ones (TS 28.535, 39 chunks) | Specification-aware router restricts/steers the candidate pool |
+| **Hallucination risk** | LLMs invent parameters and steps | Evidence gate → citation validator → claim verifier → abstention |
 
 ---
 
-## 8. Project Structure
+## 🎬 Demo
 
-```
-3gpp-grounded-rag/
-├── api/                             # FastAPI application package
-│   ├── main.py                      # Application entrypoint & lifespan management
-│   ├── routes.py                    # REST API route handlers (/health, /metadata, /ask)
-│   ├── models.py                    # Pydantic request & response schemas
-│   ├── service.py                   # RAG service coordinator
-│   └── dependencies.py              # Dependency injection provider
-├── data/
-│   ├── raw/                         # Source 3GPP specifications (.docx)
-│   ├── processed/                   # Chunks (.jsonl) and corpus manifest
-│   └── vectorstore/                 # ChromaDB persistent database (local SQLite/HNSW)
-├── docs/                            # Architectural design and validation reports
-│   ├── corpus_inspection_report.md
-│   ├── ingestion_validation_report.md
-│   ├── retrieval_architecture.md
-│   ├── retrieval_baseline_report.md
-│   ├── retrieval_benchmark_v2_report.md
-│   ├── specification_aware_routing_report.md
-│   ├── generation_architecture.md
-│   └── generation_evaluation_report.md
-├── evaluation/
-│   ├── retrieval/                   # Retrieval benchmark datasets & runners
-│   │   ├── retrieval_dataset.json   # 21 authoritative benchmark queries
-│   │   ├── retrieval_results.json   # Verified benchmark evaluation results
-│   │   ├── heldout_results.json     # 6-query held-out generalization results
-│   │   └── run_evaluation.py        # Retrieval evaluation executable script
-│   └── generation/                  # Generation evaluation datasets & runners
-│       ├── generation_dataset.json  # 30-query end-to-end evaluation dataset
-│       ├── generation_results.json  # Generation metrics & latency breakdown
-│       └── run_generation_evaluation.py # Generation evaluation executable script
-├── generation/                      # Generation & verification pipeline
-│   ├── generator.py                 # Structured prompt builder & Ollama caller
-│   ├── citation_validator.py        # Authoritative citation verification
-│   ├── claim_verifier.py            # Token-level claim containment verifier
-│   ├── evidence_gate.py             # Pre-generation sufficiency gate
-│   ├── abstention.py                # Safe abstention policy engine
-│   └── pipeline.py                  # End-to-end generation workflow
-├── ingestion/                       # Document ingestion & parsing package
-│   ├── ingest.py                    # Full corpus ingestion entrypoint
-│   ├── inspect_documents.py         # Empirical document inspection & stats
-│   ├── docx_parser.py               # Low-level python-docx XML extractor
-│   ├── chunker.py                   # Hierarchical clause chunker
-│   ├── table_parser.py              # Markdown table converter
-│   └── models.py                    # Formal chunk dataclass definitions
-├── retrieval/                       # Retrieval & ranking engine
-│   ├── index_corpus.py              # Embedding & Chroma indexing script
-│   ├── retriever.py                 # SemanticRetriever & HybridRetriever
-│   ├── bm25.py                      # Okapi BM25 with telecom tokenization
-│   ├── router.py                    # Specification-aware query router
-│   ├── vector_store.py              # ChromaDB client wrapper
-│   └── embedding.py                 # Ollama embedding client
-├── scripts/                         # Diagnostic and QA utility scripts
-│   ├── qa_fastapi_final.py          # Automated API test suite
-│   └── smoke_test_api.py            # Quick live integration smoke test
-├── tests/                           # 90 automated unit & integration tests
-├── .env.example                     # Environment configuration template
-├── requirements.txt                 # Pinned project dependencies
-└── streamlit_app.py                 # Streamlit visual demonstration interface
-```
-
----
-
-## 9. Installation & Setup
-
-### Prerequisites
-- Python 3.10+ (tested up to Python 3.13)
-- [Ollama](https://ollama.ai/) installed and running locally
-
-### 1. Pull Ollama Models
-Ensure Ollama is running (`ollama serve`), then pull the required models:
 ```bash
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?", "top_k": 5}'
+```
+
+**Answered, with validated citation:**
+
+```json
+{
+  "status": "answered",
+  "answer": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF [TS 38.300, Clause 4.3.1.1 — NG User Plane].",
+  "citations": [{"specification": "TS 38.300", "clause_number": "4.3.1.1", "clause_title": "NG User Plane"}]
+}
+```
+
+**Abstains instead of hallucinating** (e.g. *"How does 7G holographic teleportation work in 3GPP?"*):
+
+```json
+{ "status": "abstain", "answer": null, "reason": "The question cannot be answered from the provided 3GPP specifications or contains adversarial premises." }
+```
+
+---
+
+## 📊 Results
+
+> All numbers come from the scripts in [`evaluation/`](evaluation/) and are reproducible (see [Reproducing results](#reproducing-results)). The evaluation sets are small, so treat these as empirical results on these sets, **not universal guarantees**.
+
+### Retrieval (21 authoritative queries)
+
+| Metric | Result |
+| :--- | :--- |
+| Hit@1 | 66.7% (14/21) |
+| Hit@3 | 90.5% (19/21) |
+| **Hit@5** | **100% (21/21)** |
+| **MRR** | **0.7992** (hybrid baseline: 0.7251) |
+| Held-out generalization (6 unseen queries), Hit@5 | 83.3% (5/6) |
+
+### Ablation: what each component buys
+
+| Configuration | Hit@1 | Hit@5 | MRR |
+| :--- | :---: | :---: | :---: |
+| Dense only | TODO | TODO | TODO |
+| BM25 only | TODO | TODO | TODO |
+| Dense + BM25 (RRF) | TODO | TODO | 0.7251 |
+| + Specification-aware routing | TODO | TODO | TODO |
+| + Structural re-ranking (**final**) | 66.7% | 100% | **0.7992** |
+
+<!-- TODO: fill from evaluation/retrieval/retrieval_results.json. Recruiters love this table. -->
+
+### Grounded generation (30 queries: 22 answerable, 8 adversarial/unanswerable)
+
+| Metric | Result | Denominator |
+| :--- | :--- | :--- |
+| Citation validity | 100% | 20/20 answers that were produced |
+| Citation completeness | 100% | spec + clause number + title present |
+| Claim support rate | 100% | 15/15 verified claims |
+| Unsupported claim rate | 0% | 0/15 claims |
+| Abstention accuracy | 100% | 8/8 adversarial queries |
+| False answer rate | 0% | 0/8 |
+| Answer correctness (answerable) | 63.6% | 14/22, with a 1.5B local model |
+
+**How to read this:** the verification gates make the system *safe* (nothing unsupported gets through), while *correctness* is bounded by the small generator and by cautious abstention on hard multi-step questions. Swapping in a larger model is the main lever (see [Roadmap](#-roadmap)).
+
+<!-- TODO: add one sentence clarifying why 20 of 22 answerable queries produced answers (the other 2 abstained or failed validation). -->
+
+---
+
+## 🏗 Architecture
+
+```mermaid
+flowchart TD
+    Q[User query] --> R[Specification-aware router]
+    R --> D[Dense search<br/>nomic-embed-text, 768d, ChromaDB HNSW]
+    R --> B[Telecom BM25<br/>identifier-preserving tokenizer]
+    D --> F[Reciprocal Rank Fusion<br/>k=60, w_dense=0.6, w_bm25=0.4]
+    B --> F
+    R --> S[Target spec filter]
+    S --> M
+    F --> M[Structural metadata re-ranker<br/>title / definition / procedure / description boosts]
+    M --> G{Evidence sufficiency gate}
+    G -- insufficient --> A[Safe abstention]
+    G -- pass --> L[Constrained generator<br/>Qwen2.5:1.5b, T=0, JSON output]
+    L --> C[Citation validator<br/>spec, clause, title, evidence IDs]
+    C --> V[Claim-support verifier<br/>token and n-gram containment]
+    V -- unsupported --> A
+    V -- supported --> O[Grounded answer with citations]
+```
+
+### Key design decisions
+
+| Decision | Rationale | Trade-off |
+| :--- | :--- | :--- |
+| Custom BM25 instead of a library | Needed a tokenizer that preserves `5G-GUTI`, `S-NSSAI`, `4.2.8.0` | More code to maintain |
+| RRF over score fusion | Dense and BM25 scores are not on comparable scales; rank fusion is robust | Discards score magnitude |
+| Deterministic verifier over LLM-as-judge | Reproducible, zero extra latency/cost, auditable | May reject valid paraphrases (favors safety over recall) |
+| `T=0.0` + structured JSON with evidence IDs | Each claim maps to a checkable evidence chunk | Smaller models sometimes emit malformed JSON → abstain |
+| Local-only inference | Privacy for proprietary telecom work | CPU latency of 40–110 s/query |
+
+---
+
+## 📚 Corpus & Ingestion
+
+| Spec | Version | Title | Chunks |
+| :--- | :--- | :--- | ---: |
+| TS 23.501 | V18.12.0 | System Architecture for the 5G System | 1,437 |
+| TS 23.502 | V18.14.0 | Procedures for the 5G System | 1,719 |
+| TS 24.501 | V18.13.0 | NAS protocol for 5GS | 2,968 |
+| TS 28.535 | V18.2.0 | Management & orchestration; closed control loop assurance | 39 |
+| TS 38.300 | V18.10.0 | NR; NG-RAN Overall Description | 574 |
+| **Total** | | 48,844 paragraphs · 3,294 clauses · 673 tables | **6,737** |
+
+- **Hierarchical clause extraction** across all heading levels and annexes, with persistent breadcrumb trails.
+- **Table preservation**: 673 technical tables converted to column-aligned Markdown; layout/cover tables skipped.
+- **Boilerplate stripping**: 4,325 TOC paragraphs, page fields, headers/footers and legal notices removed to avoid index contamination.
+- **Semantic boundary chunking**: clauses over 2,000 chars split on paragraph boundaries, with clause ID and breadcrumb prepended to every sub-chunk.
+
+---
+
+## 🔎 Retrieval Details
+
+**Hybrid score**
+
+$$\text{RRF}(d) = \sum_{m \in \{\text{dense},\,\text{bm25}\}} w_m \cdot \frac{1}{k + \text{rank}_m(d)}, \quad k=60,\; w_{\text{dense}}=0.6,\; w_{\text{bm25}}=0.4$$
+
+**Structural re-ranking** (candidate pool = max(30, 4 × top_k)):
+
+| Signal | Boost |
+| :--- | :---: |
+| Clause title matches query keywords | 1.30× |
+| Definition intent → Clause 3 / 3.1 | 1.45× |
+| Procedure intent → Stage-2 sections in TS 23.502 | 1.35× |
+| Description intent → architectural overview sections | 1.25× |
+
+**Routing:** explicit (`"in TS 28.535"`) and implicit (`"Closed control loop"` → TS 28.535, `"NG-RAN"` → TS 38.300, `"NAS"` → TS 24.501) detection.
+
+---
+
+## 🛡 Grounding & Safe Abstention
+
+1. **Evidence sufficiency gate**: abstain before generation if retrieval is empty or weak.
+2. **Citation validator**: every cited evidence ID must exist in the prompt context, and spec / clause number / title must match.
+3. **Claim-support verifier**: substantive n-grams and technical terms in each claim must be contained in the cited chunk.
+4. **Abstention policy**: out-of-scope (IEEE 802.11, Kubernetes), adversarial/nonexistent premises (7G teleportation), or unsupported claims → `status: "abstain"`.
+
+---
+
+## 🚀 Quickstart
+
+**Prerequisites:** Python 3.10+ and [Ollama](https://ollama.ai/) running locally.
+
+```bash
+# 1. Models
 ollama pull nomic-embed-text:latest
 ollama pull qwen2.5:1.5b
-```
 
-### 2. Set Up Virtual Environment & Dependencies
-```bash
-# Clone the repository
+# 2. Install
 git clone https://github.com/Dipakk7/3gpp-grounded-rag.git
 cd 3gpp-grounded-rag
-
-# Create virtual environment
 python -m venv .venv
-
-# Activate environment (Windows PowerShell)
-.\.venv\Scripts\Activate.ps1
-# Or Windows Command Prompt:
-# .\.venv\Scripts\activate.bat
-# Or Linux/macOS:
-# source .venv/bin/activate
-
-# Install dependencies
+source .venv/bin/activate          # Windows: .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-```
-
-### 3. Environment Configuration
-Copy the template configuration file:
-```bash
 cp .env.example .env
-```
-Default parameters point to localhost services (`OLLAMA_URL=http://localhost:11434`, `VECTORSTORE_PATH=data/vectorstore`).
 
-### 4. Optional: Run Ingestion & Indexing
-The repository includes the processed chunks and indices. To re-run the pipeline from raw files:
-```bash
-# Parse raw DOCX files and generate chunks
-python ingestion/ingest.py
+# 3. Run API (http://localhost:8000/docs)
+uvicorn api.main:app --port 8000 --reload
 
-# Embed chunks and build ChromaDB index
-python retrieval/index_corpus.py
-```
-
----
-
-## 10. Running the Application
-
-### Start the FastAPI Backend
-```bash
-uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
-```
-Interactive API documentation will be available at:
-- Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-- ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
-
-### Start the Streamlit Demonstration UI
-In a separate terminal window (with virtual environment activated):
-```bash
+# 4. Run UI (new terminal, http://localhost:8501)
 streamlit run streamlit_app.py
 ```
-Open [http://localhost:8501](http://localhost:8501) in your browser to interact with the visual interface.
+
+Processed chunks and indices ship with the repo. To rebuild from raw `.docx`:
+
+```bash
+python ingestion/ingest.py && python retrieval/index_corpus.py
+```
+
+### Reproducing results
+
+```bash
+pytest -v                                                    # 90 tests
+python evaluation/retrieval/run_evaluation.py                # 21-query retrieval benchmark
+python evaluation/generation/run_generation_evaluation.py    # 30-query generation benchmark
+```
 
 ---
 
-## 11. REST API Reference
+## 🔌 API
 
-### `GET /health`
-Returns the operational health and readiness of the vector store, BM25 index, and model endpoints.
+| Endpoint | Description |
+| :--- | :--- |
+| `GET /health` | Readiness of vector store, BM25 index, and models |
+| `GET /metadata` | Indexed specs, chunk counts, model configuration |
+| `POST /ask` | Full grounded QA pipeline (`question`, `top_k`) → `answered` or `abstain` with citations, evidence, and latency breakdown |
 
-**Example Response:**
+<details>
+<summary>Example <code>/health</code> response</summary>
+
 ```json
 {
   "status": "ok",
@@ -341,124 +260,94 @@ Returns the operational health and readiness of the vector store, BM25 index, an
   }
 }
 ```
+</details>
 
-### `GET /metadata`
-Returns information on the indexed specifications, chunk counts, and model configurations.
+---
 
-### `POST /ask`
-Submits a query to the full grounded question-answering pipeline.
+## 🧪 Testing
 
-**Example Request:**
-```bash
-curl -X POST "http://localhost:8000/ask" \
-     -H "Content-Type: application/json" \
-     -d '{"question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?", "top_k": 5}'
+| File | Tests | Covers |
+| :--- | :---: | :--- |
+| `test_api.py` | 12 | endpoints, validation, error sanitization, CORS |
+| `test_clause_detection.py` | 6 | heading regex, annexes, noise rejection |
+| `test_fix3_retrieval_refinement.py` | 5 | structural re-ranking boosts |
+| `test_generation.py` | 17 | claim verification, citation gating, prompt-injection defense |
+| `test_ingestion_pipeline.py` | 18 | breadcrumbs, tables, chunk IDs, manifest |
+| `test_retrieval.py` | 14 | dense search, BM25 tokenizer, RRF |
+| `test_specification_routing.py` | 12 | explicit/implicit routing, fallback |
+| `test_streamlit_ui.py` | 6 | UI health, mock responses, layout |
+| **Total** | **90** | |
+
+---
+
+## ⚠️ Limitations & Failure Analysis
+
+1. **Latency:** `qwen2.5:1.5b` on CPU takes ~40–110 s/query (generation dominates; retrieval is ~1–2 s).
+2. **Small-model ceiling:** multi-spec procedural questions can yield malformed JSON → safe abstention. Correctness on answerable queries is 63.6%.
+3. **Small eval sets:** 21 / 6 / 30 queries. Results are indicative, not statistically conclusive.
+4. **Conservative verifier:** token containment can reject valid paraphrases (precision over recall).
+5. **Static corpus:** 5 specs only; references to unindexed specs (e.g. TS 33.501) can't be resolved.
+
+<!-- TODO: add 2-3 concrete failing queries from your eval (query, expected clause, what happened, root cause). Shows engineering maturity. -->
+
+---
+
+## 🗺 Roadmap
+
+- [ ] Larger/quantized generator (7B+ via vLLM/llama.cpp on GPU) to lift correctness
+- [ ] Cross-encoder re-ranker (e.g. BGE-Reranker) after RRF
+- [ ] Expand eval set to 100+ queries with confidence intervals
+- [ ] Corpus expansion (TS 33.501, TS 32.240, full Rel-18)
+- [ ] Multimodal call-flow diagram understanding
+- [ ] Dockerfile + GitHub Actions CI (lint, tests)
+
+---
+
+## 📁 Project Structure
+
+<details>
+<summary>Expand</summary>
+
 ```
+3gpp-grounded-rag/
+├── api/            # FastAPI app: main, routes, models, service, dependencies
+├── generation/     # generator, citation_validator, claim_verifier, evidence_gate, abstention, pipeline
+├── ingestion/      # docx_parser, chunker, table_parser, ingest, models
+├── retrieval/      # retriever (dense + hybrid), bm25, router, vector_store, embedding, index_corpus
+├── evaluation/     # retrieval/ and generation/ datasets, runners, results
+├── data/           # raw/, processed/, vectorstore/
+├── docs/           # architecture + validation reports
+├── scripts/        # QA and smoke tests
+├── tests/          # 90 automated tests
+├── streamlit_app.py
+├── requirements.txt
+└── .env.example
+```
+</details>
 
-**Example Response (Answered):**
-```json
-{
-  "status": "answered",
-  "answer": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF [TS 38.300, Clause 4.3.1.1 — NG User Plane].",
-  "citations": [
-    {
-      "specification": "TS 38.300",
-      "version": "V18.10.0",
-      "clause_number": "4.3.1.1",
-      "clause_title": "NG User Plane",
-      "formatted_citation": "[TS 38.300, Clause 4.3.1.1 — NG User Plane]"
-    }
-  ],
-  "evidence": [
-    {
-      "chunk_id": "TS_38.300-V18.10.0-4.3.1.1-P001",
-      "specification": "TS 38.300",
-      "clause_number": "4.3.1.1",
-      "clause_title": "NG User Plane",
-      "score": 0.0275
-    }
-  ],
-  "reason": null,
-  "latency_breakdown": {
-    "retrieval_ms": 1845.2,
-    "generation_ms": 42100.5,
-    "total_ms": 43945.7
-  }
+Deep dives: [`retrieval_architecture.md`](docs/retrieval_architecture.md) · [`generation_architecture.md`](docs/generation_architecture.md) · [`retrieval_benchmark_v2_report.md`](docs/retrieval_benchmark_v2_report.md) · [`generation_evaluation_report.md`](docs/generation_evaluation_report.md)
+
+---
+
+## 📝 Citation
+
+```bibtex
+@software{khandagale_3gpp_grounded_rag,
+  author = {Khandagale, Dipak},
+  title  = {3GPP-Grounded-RAG: Citation-Grounded Retrieval-Augmented Generation for 5G Specifications},
+  year   = {2026},
+  url    = {https://github.com/Dipakk7/3gpp-grounded-rag}
 }
 ```
 
-**Example Response (Safe Abstention):**
-```json
-{
-  "status": "abstain",
-  "answer": null,
-  "citations": [],
-  "evidence": [],
-  "reason": "The question cannot be answered from the provided 3GPP specifications or contains adversarial premises.",
-  "latency_breakdown": {
-    "retrieval_ms": 1210.4,
-    "generation_ms": 0.0,
-    "total_ms": 1210.4
-  }
-}
-```
+## License & Attribution
+
+Code is MIT-licensed (see [LICENSE](LICENSE)). 3GPP™ specifications remain the property of the 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC); they are used here for research and educational purposes, and no Organizational Partner endorses this implementation.
 
 ---
 
-## 12. Verification & Testing
+<div align="center">
 
-### Running the Test Suite
-The repository includes a comprehensive 90-test automated suite covering API contracts, clause detection, retrieval refinement, generation gating, and Streamlit integration:
+**Built by [Dipak Khandagale](https://dipakkhandagale.vercel.app)** · [GitHub](https://github.com/Dipakk7) · ⭐ Star the repo if it helped
 
-```bash
-pytest -v
-```
-
-**Verified Test Breakdown:**
-- `tests/test_api.py`: 12 tests (endpoints, validation, error sanitization, CORS)
-- `tests/test_clause_detection.py`: 6 tests (heading regex, annex formatting, noise rejection)
-- `tests/test_fix3_retrieval_refinement.py`: 5 tests (structural metadata re-ranking boosts)
-- `tests/test_generation.py`: 17 tests (claim verification, citation gating, prompt injection defense)
-- `tests/test_ingestion_pipeline.py`: 18 tests (breadcrumbs, tables, chunk IDs, manifest)
-- `tests/test_retrieval.py`: 14 tests (dense search, BM25 tokenizer, RRF fusion)
-- `tests/test_specification_routing.py`: 12 tests (explicit/implicit routing, fallback)
-- `tests/test_streamlit_ui.py`: 6 tests (UI health checks, mock responses, layout parsing)
-
-**Result:** **90 passed in ~93s**
-
-### Running Benchmark Evaluations
-
-```bash
-# Execute 21-query authoritative retrieval evaluation
-python evaluation/retrieval/run_evaluation.py
-
-# Execute 30-query end-to-end generation evaluation
-python evaluation/generation/run_generation_evaluation.py
-
-# Run API integration QA script
-python scripts/qa_fastapi_final.py
-```
-
----
-
-## 13. Limitations & Future Roadmap
-
-### Current Limitations
-1. **CPU Generation Latency**: Executing `qwen2.5:1.5b` locally on general-purpose CPUs yields generation latencies of ~40–110s per query. This reflects local CPU-bound transformer autoregressive decoding rather than retrieval latency.
-2. **Small Parameter Model Context Bounds**: When questions require synthesizing complex multi-page procedural call flows spanning several specifications, smaller models (1.5B parameters) may produce incomplete structured JSON, triggering safe abstention.
-3. **Static Specification Corpus**: The current index is built over 5 core Release 18 specifications. Cross-specification references to unindexed documents (e.g. TS 33.501 for security) cannot be retrieved.
-
-### Future Roadmap
-- **Accelerated Inference**: Deploying model serving with vLLM on dedicated GPUs for sub-second generation latencies.
-- **Cross-Encoder Re-Ranking**: Implementing a domain-tuned cross-encoder (e.g. BGE-Reranker-Large) downstream of RRF for finer-grained ranking precision.
-- **Corpus Expansion**: Ingesting the complete 3GPP Release 18 catalog, including Security (TS 33.501) and Charging Architecture (TS 32.240).
-- **Multi-Modal Architecture**: Incorporating call-flow diagrams and protocol sequence charts via vision-language models.
-
----
-
-## 14. License & Attribution
-
-This project is developed for personal portfolio, educational, and technical demonstration purposes.
-
-- **Source Code**: Available under the permissive terms of the MIT License for portfolio demonstration.
-- **Standards Attribution**: 3GPP™ specifications and materials remain the property and copyright of the 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). Specifications are referenced and parsed in accordance with 3GPP working procedures for research, technical evaluation, and educational illustration. Neither 3GPP nor any Organizational Partner endorses or certifies this implementation.
+</div>
