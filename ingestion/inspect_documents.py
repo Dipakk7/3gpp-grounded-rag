@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Mavenir 3GPP RAG — Phase 1: Document Intelligence & Corpus Inspection
+3GPP-Grounded-RAG — Phase 1: Document Intelligence & Corpus Inspection
 Programmatic inspection tool for 3GPP Technical Specifications (.docx).
 
 Analyzes document metadata, paragraph hierarchy, styles, clause numbering,
@@ -447,7 +447,7 @@ def analyze_document(doc_path: Path):
 def generate_markdown_report(docs_data: list, val_data: dict, output_path: Path):
     """Generates a comprehensive markdown report for the entire corpus."""
     lines = []
-    lines.append("# Mavenir 3GPP RAG — Corpus Inspection & Document Intelligence Report")
+    lines.append("# 3GPP-Grounded-RAG — Corpus Inspection & Document Intelligence Report")
     lines.append("")
     lines.append("> **Phase 1 Output:** Empirical structural analysis of the 5 finalized 3GPP Technical Specifications.")
     lines.append("> Grounded purely on extracted DOCX object models, styles, and XML structures.")
@@ -525,7 +525,7 @@ def generate_markdown_report(docs_data: list, val_data: dict, output_path: Path)
     lines.append("- **Page Citation Support Status:** `requires rendering/conversion` (Unavailable natively in DOCX object model).")
     lines.append("- **Technical Root Cause:** DOCX is an XML reflow document format. Word calculates page breaks dynamically at render time based on system fonts, printer metrics, and margins.")
     lines.append("- **Empirical Evidence:** In all 5 raw documents, `w:lastRenderedPageBreak` is absent or incomplete, and headers/footers contain dynamic `PAGE` / `NUMPAGES` Word calculation fields rather than static numbers.")
-    lines.append("- **Architectural Decision for Mavenir RAG:**")
+    lines.append("- **Architectural Decision for 3GPP-Grounded-RAG:**")
     lines.append("  - **Primary & Mandatory Citation:** `Specification + Clause Number + Clause Title` (e.g. `TS 23.501 Clause 4.2.3: Non-roaming reference architecture`).")
     lines.append("  - Clause numbers are authoritative, standardized across 3GPP releases, invariant to font/zoom rendering differences, and provide exact technical pinpointing.")
     lines.append("  - Page numbers should not be synthesized or fabricated without rendering.")

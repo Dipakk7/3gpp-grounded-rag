@@ -1,5 +1,5 @@
 """
-FastAPI Application Entrypoint for Mavenir 3GPP Grounded RAG API.
+FastAPI Application Entrypoint for 3GPP-Grounded-RAG API.
 """
 
 import os
@@ -27,7 +27,7 @@ logger = logging.getLogger("rag_api")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Lifespan context manager for application startup and shutdown."""
-    logger.info("Starting up Mavenir 3GPP Grounded RAG API Service...")
+    logger.info("Starting up 3GPP-Grounded-RAG API Service...")
     try:
         service = get_rag_service()
         service.initialize()
@@ -40,13 +40,13 @@ async def lifespan(app: FastAPI):
     
     yield
     
-    logger.info("Shutting down Mavenir 3GPP Grounded RAG API Service...")
+    logger.info("Shutting down 3GPP-Grounded-RAG API Service...")
 
 
 def create_app() -> FastAPI:
     """Factory to create and configure the FastAPI application."""
     app = FastAPI(
-        title="Mavenir 3GPP Grounded RAG API",
+        title="3GPP-Grounded-RAG API",
         version="1.0.0",
         description=(
             "Production-grade, grounded Question-Answering API for 3GPP 5G Technical Specifications. "

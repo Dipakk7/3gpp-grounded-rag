@@ -1,4 +1,4 @@
-# Mavenir 3GPP RAG — Phase 3: Retrieval Baseline & Hybrid Benchmark Report
+# 3GPP-Grounded-RAG — Phase 3: Retrieval Baseline & Hybrid Benchmark Report
 
 > **Document Status:** Complete & Verified  
 > **Target Subsystem:** Dense Semantic Vector Retrieval + BM25 Lexical + Hybrid RRF Fusion  
@@ -8,7 +8,7 @@
 
 ## 1. Executive Summary
 
-Phase 3 established the evidence retrieval engine for the Mavenir 3GPP RAG system. All 6,737 chunks generated in Phase 2 were embedded using `nomic-embed-text` (768 dimensions) via a local Ollama instance and indexed into a persistent ChromaDB vector store. A complementary Okapi BM25 lexical index with custom telecom tokenization was constructed to preserve exact acronyms, identifiers, and clause numbers.
+Phase 3 established the evidence retrieval engine for the 3GPP-Grounded-RAG system. All 6,737 chunks generated in Phase 2 were embedded using `nomic-embed-text` (768 dimensions) via a local Ollama instance and indexed into a persistent ChromaDB vector store. A complementary Okapi BM25 lexical index with custom telecom tokenization was constructed to preserve exact acronyms, identifiers, and clause numbers.
 
 Evaluation across a frozen, manually-verified 20-query ground-truth benchmark demonstrates that **Hybrid Retrieval (Dense + BM25 via Reciprocal Rank Fusion)** significantly outperforms individual retrievers, achieving **100% Hit@5** and an **MRR of 0.8833** at sub-100ms total latency.
 

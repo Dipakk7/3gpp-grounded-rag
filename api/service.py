@@ -159,7 +159,7 @@ class RAGService:
                 chunk_count = self.bm25.num_docs
 
         return {
-            "service": "mavenir-3gpp-rag",
+            "service": "3gpp-grounded-rag",
             "specifications": specs,
             "total_chunks": chunk_count,
             "embedding_model": self.embed_model,

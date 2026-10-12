@@ -102,7 +102,7 @@ def get_health(service: RAGService = Depends(get_rag_service)):
         status_str = "ok" if is_healthy else "degraded"
         response_data = HealthResponse(
             status=status_str,
-            service="mavenir-3gpp-rag",
+            service="3gpp-grounded-rag",
             version="1.0.0",
             details=health_info,
         )
@@ -118,7 +118,7 @@ def get_health(service: RAGService = Depends(get_rag_service)):
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             content=HealthResponse(
                 status="unhealthy",
-                service="mavenir-3gpp-rag",
+                service="3gpp-grounded-rag",
                 version="1.0.0",
                 details={"error": "Service health check encountered an error."},
             ).model_dump(),

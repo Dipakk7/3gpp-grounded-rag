@@ -1,4 +1,4 @@
-# Mavenir 3GPP RAG — Phase 2: Ingestion & Chunking Validation Report
+# 3GPP-Grounded-RAG — Phase 2: Ingestion & Chunking Validation Report
 
 > **Phase 2 Output:** Quantitative validation of clause-aware hierarchical ingestion and table-preserving chunking.
 

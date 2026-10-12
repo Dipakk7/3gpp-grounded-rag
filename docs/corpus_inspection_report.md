@@ -1,4 +1,4 @@
-# Mavenir 3GPP RAG — Corpus Inspection & Document Intelligence Report
+# 3GPP-Grounded-RAG — Corpus Inspection & Document Intelligence Report
 
 > **Phase 1 Output:** Empirical structural analysis of the 5 finalized 3GPP Technical Specifications.
 > Grounded purely on extracted DOCX object models, styles, and XML structures.
@@ -177,7 +177,7 @@
 - **Page Citation Support Status:** `requires rendering/conversion` (Unavailable natively in DOCX object model).
 - **Technical Root Cause:** DOCX is an XML reflow document format. Word calculates page breaks dynamically at render time based on system fonts, printer metrics, and margins.
 - **Empirical Evidence:** In all 5 raw documents, `w:lastRenderedPageBreak` is absent or incomplete, and headers/footers contain dynamic `PAGE` / `NUMPAGES` Word calculation fields rather than static numbers.
-- **Architectural Decision for Mavenir RAG:**
+- **Architectural Decision for 3GPP-Grounded-RAG:**
   - **Primary & Mandatory Citation:** `Specification + Clause Number + Clause Title` (e.g. `TS 23.501 Clause 4.2.3: Non-roaming reference architecture`).
   - Clause numbers are authoritative, standardized across 3GPP releases, invariant to font/zoom rendering differences, and provide exact technical pinpointing.
   - Page numbers should not be synthesized or fabricated without rendering.

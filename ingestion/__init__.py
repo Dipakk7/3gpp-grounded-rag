@@ -1,5 +1,5 @@
 """
-Mavenir 3GPP RAG — Document Ingestion & Chunking Package.
+3GPP-Grounded-RAG — Document Ingestion & Chunking Package.
 """
 
 from ingestion.models import Chunk, DocumentMetadata, BreadcrumbItem, ClauseInfo

@@ -89,14 +89,14 @@ class AskResponse(BaseModel):
 class HealthResponse(BaseModel):
     """Response payload for /health endpoint."""
     status: str = Field(description="'ok' if healthy, 'degraded' or 'unhealthy' if dependencies fail", examples=["ok"])
-    service: str = Field(default="mavenir-3gpp-rag", description="Service identifier")
+    service: str = Field(default="3gpp-grounded-rag", description="Service identifier")
     version: str = Field(default="1.0.0", description="API version")
     details: Dict[str, Any] = Field(default_factory=dict, description="Component readiness and availability status")
 
 
 class MetadataResponse(BaseModel):
     """Response payload for /metadata endpoint."""
-    service: str = Field(default="mavenir-3gpp-rag")
+    service: str = Field(default="3gpp-grounded-rag")
     specifications: List[str] = Field(description="List of 3GPP specifications covered in the index")
     total_chunks: int = Field(description="Total number of indexed chunks across specifications")
     embedding_model: str = Field(description="Configured embedding model")

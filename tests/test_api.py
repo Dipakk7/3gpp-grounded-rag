@@ -47,7 +47,7 @@ class TestFastAPIWrapper(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         data = resp.json()
         self.assertEqual(data["status"], "ok")
-        self.assertEqual(data["service"], "mavenir-3gpp-rag")
+        self.assertEqual(data["service"], "3gpp-grounded-rag")
         self.assertEqual(data["details"]["vector_store_chunk_count"], 6737)
 
     # 2. Health endpoint returns degraded response on uninitialized components
@@ -223,7 +223,7 @@ class TestFastAPIWrapper(unittest.TestCase):
     def test_11_metadata_endpoint(self):
         """Verify GET /metadata exposes specifications and models."""
         self.mock_service.get_metadata.return_value = {
-            "service": "mavenir-3gpp-rag",
+            "service": "3gpp-grounded-rag",
             "specifications": ["TS 23.501", "TS 23.502", "TS 24.501", "TS 28.535", "TS 38.300"],
             "total_chunks": 6737,
             "embedding_model": "nomic-embed-text",

@@ -17,7 +17,7 @@ class TestStreamlitUI(unittest.TestCase):
         mock_resp.status_code = 200
         mock_resp.json.return_value = {
             "status": "ok",
-            "service": "mavenir-3gpp-rag",
+            "service": "3gpp-grounded-rag",
             "details": {"vector_store_chunk_count": 6737},
         }
         mock_get.return_value = mock_resp

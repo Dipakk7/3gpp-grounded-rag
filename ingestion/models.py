@@ -48,7 +48,7 @@ class ClauseInfo:
 @dataclass
 class Chunk:
     """
-    Formal Chunk Schema for the Mavenir 3GPP RAG pipeline.
+    Formal Chunk Schema for the 3GPP-Grounded-RAG pipeline.
     All fields are strictly typed, serializable to JSON/JSONL, and deterministic.
     """
     chunk_id: str

@@ -30,7 +30,7 @@ def run_fastapi_qa():
     print(f"Response: {json.dumps(health_data, indent=2)}")
     assert resp_health.status_code == 200, f"Expected 200, got {resp_health.status_code}"
     assert health_data["status"] == "ok"
-    assert health_data["service"] == "mavenir-3gpp-rag"
+    assert health_data["service"] == "3gpp-grounded-rag"
     print("GET /health: PASS")
     
     # 2. Metadata Endpoint QA

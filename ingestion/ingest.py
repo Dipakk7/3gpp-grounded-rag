@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Mavenir 3GPP RAG — Phase 2: Ingestion & Chunking Pipeline Entrypoint.
+3GPP-Grounded-RAG — Phase 2: Ingestion & Chunking Pipeline Entrypoint.
 Executes end-to-end ingestion across all 5 raw 3GPP Technical Specifications.
 Generates:
   - data/processed/TS_23_501_chunks.jsonl
@@ -167,7 +167,7 @@ def generate_validation_report(manifest: Dict[str, Any], output_path: Path):
     docs = manifest["documents"]
 
     lines = []
-    lines.append("# Mavenir 3GPP RAG — Phase 2: Ingestion & Chunking Validation Report")
+    lines.append("# 3GPP-Grounded-RAG — Phase 2: Ingestion & Chunking Validation Report")
     lines.append("")
     lines.append("> **Phase 2 Output:** Quantitative validation of clause-aware hierarchical ingestion and table-preserving chunking.")
     lines.append("")

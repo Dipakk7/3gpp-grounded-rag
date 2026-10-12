@@ -1,7 +1,7 @@
 # Phase 2 Final Audit: Ingestion & Chunking Quality Verification
 
 > **Document Status:** Complete & Verified  
-> **Target System:** Mavenir 3GPP RAG Pipeline  
+> **Target System:** 3GPP-Grounded-RAG Pipeline  
 > **Corpus:** 5 Technical Specifications (TS 23.501, TS 23.502, TS 24.501, TS 28.535, TS 38.300)
 
 ---

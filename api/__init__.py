@@ -1,5 +1,5 @@
 """
-Mavenir 3GPP RAG API Package.
+3GPP-Grounded-RAG API Package.
 """
 
 from api.main import app, create_app
