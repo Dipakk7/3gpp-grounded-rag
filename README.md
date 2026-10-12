@@ -54,15 +54,14 @@ Telecom engineers work from 3GPP specs spanning thousands of dense pages. A wron
 | **MRR** | **0.7992** (hybrid baseline: 0.7251) |
 | Held-out generalization (6 unseen queries), Hit@5 | 83.3% (5/6) |
 
-### Ablation: what each component buys
+### What the full pipeline adds over plain hybrid search
 
-| Configuration | Hit@1 | Hit@5 | MRR |
-| :--- | :---: | :---: | :---: |
-| Dense only | TODO | TODO | TODO |
-| BM25 only | TODO | TODO | TODO |
-| Dense + BM25 (RRF) | TODO | TODO | 0.7251 |
-| + Specification-aware routing | TODO | TODO | TODO |
-| + Structural re-ranking (**final**) | 66.7% | 100% | **0.7992** |
+| Configuration | MRR |
+| :--- | :---: |
+| Dense + BM25 via RRF (baseline) | 0.7251 |
+| + Specification-aware routing + structural re-ranking (**final**) | **0.7992** |
+
+Routing and re-ranking lift MRR by about 10% relative (+0.074) over the plain hybrid baseline.
 
 ### Grounded generation (30 queries: 22 answerable, 8 adversarial/unanswerable)
 
