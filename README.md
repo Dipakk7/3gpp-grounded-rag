@@ -10,12 +10,8 @@
 [![Ollama](https://img.shields.io/badge/LLM%20%26%20Embeddings-Ollama-000000.svg)](https://ollama.ai/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![Tests](https://img.shields.io/badge/Tests-90%2F90%20PASS-brightgreen.svg)](tests/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Demo](#-demo) · [Results](#-results) · [Architecture](#-architecture) · [Quickstart](#-quickstart) · [API](#-api) · [Limitations](#-limitations--failure-analysis)
-
-<!-- TODO: add docs/assets/demo.gif (record the Streamlit UI answering + abstaining) -->
-<img src="docs/assets/demo.gif" alt="Demo of 3GPP-Grounded-RAG" width="800"/>
+[Results](#-results) · [Architecture](#-architecture) · [Quickstart](#-quickstart) · [API](#-api) · [Limitations](#-limitations--failure-analysis)
 
 </div>
 
@@ -39,40 +35,14 @@ Telecom engineers work from 3GPP specs spanning thousands of dense pages. A wron
 | :--- | :--- | :--- |
 | **Destructive chunking** | Fixed-size chunks split clauses like `§4.2.8.0` and tables, losing headers | Clause-aware chunking with breadcrumbs (`4 > 4.2 > 4.2.8 > 4.2.8.0`) and table preservation |
 | **Identifier blindness** | Tokenizers split `5G-GUTI`, `Npcf_SMPolicyControl`, `4.2.8.0` | Custom BM25 regex tokenizer that keeps technical identifiers intact |
-| **Specification dominance** | Big specs (TS 23.501/23.502) drown out small ones (TS 28.535, 39 chunks) | Specification-aware router restricts/steers the candidate pool |
+| **Specification dominance** | Big specs (TS 23.501/23.502) drown out small ones (TS 28.535, 39 chunks) | Specification-aware router steers the candidate pool |
 | **Hallucination risk** | LLMs invent parameters and steps | Evidence gate → citation validator → claim verifier → abstention |
-
----
-
-## 🎬 Demo
-
-```bash
-curl -X POST http://localhost:8000/ask \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?", "top_k": 5}'
-```
-
-**Answered, with validated citation:**
-
-```json
-{
-  "status": "answered",
-  "answer": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF [TS 38.300, Clause 4.3.1.1 — NG User Plane].",
-  "citations": [{"specification": "TS 38.300", "clause_number": "4.3.1.1", "clause_title": "NG User Plane"}]
-}
-```
-
-**Abstains instead of hallucinating** (e.g. *"How does 7G holographic teleportation work in 3GPP?"*):
-
-```json
-{ "status": "abstain", "answer": null, "reason": "The question cannot be answered from the provided 3GPP specifications or contains adversarial premises." }
-```
 
 ---
 
 ## 📊 Results
 
-> All numbers come from the scripts in [`evaluation/`](evaluation/) and are reproducible (see [Reproducing results](#reproducing-results)). The evaluation sets are small, so treat these as empirical results on these sets, **not universal guarantees**.
+> All numbers come from the scripts in [`evaluation/`](evaluation/) and are reproducible. The evaluation sets are small, so treat these as empirical results on these sets, **not universal guarantees**.
 
 ### Retrieval (21 authoritative queries)
 
@@ -94,13 +64,11 @@ curl -X POST http://localhost:8000/ask \
 | + Specification-aware routing | TODO | TODO | TODO |
 | + Structural re-ranking (**final**) | 66.7% | 100% | **0.7992** |
 
-<!-- TODO: fill from evaluation/retrieval/retrieval_results.json. Recruiters love this table. -->
-
 ### Grounded generation (30 queries: 22 answerable, 8 adversarial/unanswerable)
 
 | Metric | Result | Denominator |
 | :--- | :--- | :--- |
-| Citation validity | 100% | 20/20 answers that were produced |
+| Citation validity | 100% | 20/20 answers produced |
 | Citation completeness | 100% | spec + clause number + title present |
 | Claim support rate | 100% | 15/15 verified claims |
 | Unsupported claim rate | 0% | 0/15 claims |
@@ -108,9 +76,7 @@ curl -X POST http://localhost:8000/ask \
 | False answer rate | 0% | 0/8 |
 | Answer correctness (answerable) | 63.6% | 14/22, with a 1.5B local model |
 
-**How to read this:** the verification gates make the system *safe* (nothing unsupported gets through), while *correctness* is bounded by the small generator and by cautious abstention on hard multi-step questions. Swapping in a larger model is the main lever (see [Roadmap](#-roadmap)).
-
-<!-- TODO: add one sentence clarifying why 20 of 22 answerable queries produced answers (the other 2 abstained or failed validation). -->
+**How to read this:** the verification gates make the system *safe* (nothing unsupported gets through), while *correctness* is bounded by the small generator and by cautious abstention on hard multi-step questions. A larger model is the main lever for improving it.
 
 ---
 
@@ -140,9 +106,9 @@ flowchart TD
 | Decision | Rationale | Trade-off |
 | :--- | :--- | :--- |
 | Custom BM25 instead of a library | Needed a tokenizer that preserves `5G-GUTI`, `S-NSSAI`, `4.2.8.0` | More code to maintain |
-| RRF over score fusion | Dense and BM25 scores are not on comparable scales; rank fusion is robust | Discards score magnitude |
+| RRF over score fusion | Dense and BM25 scores aren't comparable; rank fusion is robust | Discards score magnitude |
 | Deterministic verifier over LLM-as-judge | Reproducible, zero extra latency/cost, auditable | May reject valid paraphrases (favors safety over recall) |
-| `T=0.0` + structured JSON with evidence IDs | Each claim maps to a checkable evidence chunk | Smaller models sometimes emit malformed JSON → abstain |
+| `T=0.0` + structured JSON with evidence IDs | Each claim maps to a checkable evidence chunk | Small models sometimes emit malformed JSON → abstain |
 | Local-only inference | Privacy for proprietary telecom work | CPU latency of 40–110 s/query |
 
 ---
@@ -226,7 +192,7 @@ python ingestion/ingest.py && python retrieval/index_corpus.py
 ### Reproducing results
 
 ```bash
-pytest -v                                                    # 90 tests
+pytest -v                                                    # 90 tests: API, ingestion, retrieval, routing, generation, UI
 python evaluation/retrieval/run_evaluation.py                # 21-query retrieval benchmark
 python evaluation/generation/run_generation_evaluation.py    # 30-query generation benchmark
 ```
@@ -241,42 +207,45 @@ python evaluation/generation/run_generation_evaluation.py    # 30-query generati
 | `GET /metadata` | Indexed specs, chunk counts, model configuration |
 | `POST /ask` | Full grounded QA pipeline (`question`, `top_k`) → `answered` or `abstain` with citations, evidence, and latency breakdown |
 
+```bash
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the NG User Plane (NG-U) interface defined between in NG-RAN?", "top_k": 5}'
+```
+
 <details>
-<summary>Example <code>/health</code> response</summary>
+<summary>Answered response</summary>
 
 ```json
 {
-  "status": "ok",
-  "service": "3gpp-grounded-rag",
-  "version": "1.0.0",
-  "details": {
-    "initialized": true,
-    "vector_store_ready": true,
-    "vector_store_chunk_count": 6737,
-    "bm25_ready": true,
-    "bm25_chunk_count": 6737,
-    "embedding_model": "nomic-embed-text:latest",
-    "generation_model": "qwen2.5:1.5b"
-  }
+  "status": "answered",
+  "answer": "The NG User Plane (NG-U) interface is defined between the NG-RAN node and the UPF [TS 38.300, Clause 4.3.1.1 — NG User Plane].",
+  "citations": [
+    {
+      "specification": "TS 38.300",
+      "version": "V18.10.0",
+      "clause_number": "4.3.1.1",
+      "clause_title": "NG User Plane"
+    }
+  ],
+  "latency_breakdown": { "retrieval_ms": 1845.2, "generation_ms": 42100.5, "total_ms": 43945.7 }
 }
 ```
 </details>
 
----
+<details>
+<summary>Safe abstention response</summary>
 
-## 🧪 Testing
-
-| File | Tests | Covers |
-| :--- | :---: | :--- |
-| `test_api.py` | 12 | endpoints, validation, error sanitization, CORS |
-| `test_clause_detection.py` | 6 | heading regex, annexes, noise rejection |
-| `test_fix3_retrieval_refinement.py` | 5 | structural re-ranking boosts |
-| `test_generation.py` | 17 | claim verification, citation gating, prompt-injection defense |
-| `test_ingestion_pipeline.py` | 18 | breadcrumbs, tables, chunk IDs, manifest |
-| `test_retrieval.py` | 14 | dense search, BM25 tokenizer, RRF |
-| `test_specification_routing.py` | 12 | explicit/implicit routing, fallback |
-| `test_streamlit_ui.py` | 6 | UI health, mock responses, layout |
-| **Total** | **90** | |
+```json
+{
+  "status": "abstain",
+  "answer": null,
+  "citations": [],
+  "reason": "The question cannot be answered from the provided 3GPP specifications or contains adversarial premises.",
+  "latency_breakdown": { "retrieval_ms": 1210.4, "generation_ms": 0.0, "total_ms": 1210.4 }
+}
+```
+</details>
 
 ---
 
@@ -287,19 +256,6 @@ python evaluation/generation/run_generation_evaluation.py    # 30-query generati
 3. **Small eval sets:** 21 / 6 / 30 queries. Results are indicative, not statistically conclusive.
 4. **Conservative verifier:** token containment can reject valid paraphrases (precision over recall).
 5. **Static corpus:** 5 specs only; references to unindexed specs (e.g. TS 33.501) can't be resolved.
-
-<!-- TODO: add 2-3 concrete failing queries from your eval (query, expected clause, what happened, root cause). Shows engineering maturity. -->
-
----
-
-## 🗺 Roadmap
-
-- [ ] Larger/quantized generator (7B+ via vLLM/llama.cpp on GPU) to lift correctness
-- [ ] Cross-encoder re-ranker (e.g. BGE-Reranker) after RRF
-- [ ] Expand eval set to 100+ queries with confidence intervals
-- [ ] Corpus expansion (TS 33.501, TS 32.240, full Rel-18)
-- [ ] Multimodal call-flow diagram understanding
-- [ ] Dockerfile + GitHub Actions CI (lint, tests)
 
 ---
 
@@ -329,25 +285,10 @@ Deep dives: [`retrieval_architecture.md`](docs/retrieval_architecture.md) · [`g
 
 ---
 
-## 📝 Citation
-
-```bibtex
-@software{khandagale_3gpp_grounded_rag,
-  author = {Khandagale, Dipak},
-  title  = {3GPP-Grounded-RAG: Citation-Grounded Retrieval-Augmented Generation for 5G Specifications},
-  year   = {2026},
-  url    = {https://github.com/Dipakk7/3gpp-grounded-rag}
-}
-```
-
-## License & Attribution
-
-Code is MIT-licensed (see [LICENSE](LICENSE)). 3GPP™ specifications remain the property of the 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC); they are used here for research and educational purposes, and no Organizational Partner endorses this implementation.
-
----
+<sub>3GPP™ specifications remain the property of the 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC) and are used here for research and educational purposes. No Organizational Partner endorses this implementation.</sub>
 
 <div align="center">
 
-**Built by [Dipak Khandagale](https://dipakkhandagale.vercel.app)** · [GitHub](https://github.com/Dipakk7) · ⭐ Star the repo if it helped
+**Built by [Dipak Khandagale](https://dipakkhandagale.vercel.app)** · [GitHub](https://github.com/Dipakk7)
 
 </div>
