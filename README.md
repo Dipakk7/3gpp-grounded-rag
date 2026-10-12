@@ -127,7 +127,7 @@ The system indexes 5 foundational 3GPP Release 18 technical specifications extra
 ### 1. Dense Semantic Vector Search
 - **Embedding Model**: `nomic-embed-text:latest` via local Ollama.
 - **Vector Dimension**: 768-dimensional float embeddings.
-- **Vector Store**: ChromaDB persistent collection (`3gpp_specifications`) using HNSW cosine space.
+- **Vector Store**: ChromaDB persistent collection (`telecom_3gpp_knowledge`) using HNSW cosine space.
 
 ### 2. Telecom-Tailored Lexical Search (BM25)
 - Custom Okapi BM25 implementation ($k_1=1.5$, $b=0.75$).
