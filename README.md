@@ -133,9 +133,7 @@ flowchart TD
 
 ## 🔎 Retrieval Details
 
-**Hybrid score**
-
-$$\text{RRF}(d) = \sum_{m \in \{\text{dense},\,\text{bm25}\}} w_m \cdot \frac{1}{k + \text{rank}_m(d)}, \quad k=60,\; w_{\text{dense}}=0.6,\; w_{\text{bm25}}=0.4$$
+**Hybrid fusion:** Reciprocal Rank Fusion over dense and BM25 rankings, with `k=60`, `w_dense=0.6`, `w_bm25=0.4`. Each chunk's score is the weighted sum of `1 / (k + rank)` across both retrievers.
 
 **Structural re-ranking** (candidate pool = max(30, 4 × top_k)):
 
@@ -284,8 +282,6 @@ curl -X POST http://localhost:8000/ask \
 Deep dives: [`retrieval_architecture.md`](docs/retrieval_architecture.md) · [`generation_architecture.md`](docs/generation_architecture.md) · [`retrieval_benchmark_v2_report.md`](docs/retrieval_benchmark_v2_report.md) · [`generation_evaluation_report.md`](docs/generation_evaluation_report.md)
 
 ---
-
-<sub>3GPP™ specifications remain the property of the 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC) and are used here for research and educational purposes. No Organizational Partner endorses this implementation.</sub>
 
 <div align="center">
 
